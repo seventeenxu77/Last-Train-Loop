@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Last-Train-Loop/Assets/Resources.meta
 guid: 834688f51a0017440825539417dcd6d0
+========
+guid: 6c34d40a92d975945b8f6354853bbd61
+>>>>>>>> Stashed changes:Last-Train-Loop/Assets/XRI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
