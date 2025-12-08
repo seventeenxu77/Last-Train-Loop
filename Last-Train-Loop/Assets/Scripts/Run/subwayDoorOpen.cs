@@ -10,7 +10,7 @@ public class subwayDoorOpen : MonoBehaviour
     
     private bool isOpen = false;         
     private bool cursorOnDoor = false;
-    private Vector3 deltaVector = new Vector3(1.0f, 0, 0);
+    private Vector3 deltaVector = new Vector3(0, 0, 1);
     private Vector3 lstartposition, lendposition, rstartposition, rendposition;
 
     private Coroutine delay;
@@ -21,18 +21,22 @@ public class subwayDoorOpen : MonoBehaviour
         rstartposition = rightdoor.position;
         rendposition = rightdoor.position + deltaVector;
     }
-    void OnMouseEnter() { cursorOnDoor = true; Debug.Log(" Û±Í–¸Õ£"); }
+    void OnMouseEnter() {
+        lstartposition = leftdoor.position;
+        lendposition = leftdoor.position - deltaVector;
+        rstartposition = rightdoor.position;
+        rendposition = rightdoor.position + deltaVector; cursorOnDoor = true; Debug.Log(" Û±Í–¸Õ£");
+    }
     void OnMouseExit() { cursorOnDoor = false; Debug.Log(" Û±Í“∆◊ﬂ"); }
 
     void OnMouseDown()
     {
         if (cursorOnDoor)
         {
-            if (delay != null)
-                StopCoroutine(delay);
+           /* if (delay != null)
+                StopCoroutine(delay);*/
             if (!isOpen)
             {
-              
                 rightdoor.position = Vector3.Lerp(rstartposition, rendposition, 1f);
                 leftdoor.position = Vector3.Lerp(lstartposition,lendposition,1f);
                 delay = StartCoroutine(CloseAfterDelay());
@@ -42,6 +46,7 @@ public class subwayDoorOpen : MonoBehaviour
     }
     private IEnumerator CloseAfterDelay()
     {
+        
         yield return new WaitForSeconds(delaySeconds);
         rightdoor.position = Vector3.Lerp(rendposition, rstartposition, 1f);
         leftdoor.position = Vector3.Lerp(lendposition, lstartposition, 1f);

@@ -3,9 +3,9 @@ using UnityEngine;
 public class playerMove : MonoBehaviour
 {
     [Header("指定player的起始位置")]
-    public Vector3 startPosition;
+    public Vector3 StartPosition;
     [Header("指定player起始在target")]
-    public Transform target;
+    public Transform Target;
     [Tooltip("指定玩家移动速度")]
     public float PlayerSpeed = 3f;
     [Tooltip("指定视角转动灵敏度")]
@@ -15,8 +15,8 @@ public class playerMove : MonoBehaviour
     private float rotationY = 0f;
     void Start()
     {
-        transform.position = startPosition;
-        if (target != null ) transform.position = target.position + new Vector3(1,1,1);
+        transform.position = StartPosition;
+        if (Target != null ) transform.position = Target.position + new Vector3(1,1,1);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
