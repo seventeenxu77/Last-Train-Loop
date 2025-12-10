@@ -1,0 +1,51 @@
+# Blender MTL File: 'untitled.blend'
+# Material Count: 4
+
+newmtl 24_shirt_0.3_0_0.001
+Ns 0.669420
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump Suit extra normal map.jpg
+map_Kd Suit extra diffuse .jpg
+map_Ks Suit extra Specular .jpg
+
+newmtl 24_suit_0.4_0_0.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump Suit and hand Normal Map.jpg
+map_Kd Suit and hand  Diffuse.jpg
+map_Ks Suit and hand  Specular.jpg
+
+newmtl 24_trousers_0.4_0_0.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Legs and shoes  Diffuse.jpg
+map_Ks Legs shoes Specular .jpg
+
+newmtl material_0.004
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd Head.png
