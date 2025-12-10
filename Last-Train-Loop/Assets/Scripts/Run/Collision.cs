@@ -8,12 +8,12 @@ public class Collision : MonoBehaviour
     private void OnCollisionEnter(UnityEngine.Collision collision)
     {
         body = GetComponent<Rigidbody>();
-        Debug.Log("·¢ÉúÅö×²");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×²");
     }
     private void OnCollisionExit(UnityEngine.Collision collision)
     {
-        body.velocity = Vector3.zero;
+        body.linearVelocity = Vector3.zero;
         body.angularVelocity = Vector3.zero;
-        Debug.Log("Åö×²½áÊø");
+        Debug.Log("ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½");
     }
 }
