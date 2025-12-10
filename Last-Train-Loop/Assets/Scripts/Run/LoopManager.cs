@@ -25,6 +25,8 @@ public class LoopManager : MonoBehaviour
     // 用于保存每次循环动态生成的物件的父对象
     private GameObject dynamicContentParent;
 
+    public bool has_exception = false;
+    
     void Awake()
     {
         if (Instance == null)
@@ -34,7 +36,7 @@ public class LoopManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
@@ -48,6 +50,7 @@ public class LoopManager : MonoBehaviour
         }
 
         GenerateLoopContent();
+        has_exception = currentLoopIndex > 1 ?true:false;  //根据场景生成情况修改has_exception
 
         // 【新增 1】确保玩家在第一次进入游戏时位于出生点
         TeleportPlayerToSpawn();
@@ -73,7 +76,7 @@ public class LoopManager : MonoBehaviour
             // if (controller != null) controller.enabled = true;
         }
     }
-
+  
     // 核心功能 1：触发下一个循环 (进入列车)
     public void StartNewLoop()
     {
