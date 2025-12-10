@@ -65,7 +65,7 @@ Material:
     m_Colors:
     - baseColorFactor: {r: 1, g: 1, b: 1, a: 1}
     - baseColorTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
-    - emissiveFactor: {r: 1, g: 0.9648465, b: 0, a: 1}
+    - emissiveFactor: {r: 0.89305973, g: 1, b: 0, a: 1}
     - emissiveTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
     - metallicRoughnessTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
     - normalTexture_Rotation: {r: 0, g: 0, b: 0, a: 0}
