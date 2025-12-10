@@ -50,7 +50,7 @@ public class LoopManager : MonoBehaviour
         }
 
         GenerateLoopContent();
-        has_exception = currentLoopIndex > 1 ?true:false;  //根据场景生成情况修改has_exception
+        has_exception = currentLoopIndex >= 1 ?true:false;  //根据场景生成情况修改has_exception
 
         // 【新增 1】确保玩家在第一次进入游戏时位于出生点
         TeleportPlayerToSpawn();
