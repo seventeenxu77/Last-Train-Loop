@@ -6,7 +6,11 @@ QualitySettings:
   serializedVersion: 5
   m_CurrentQuality: 5
   m_QualitySettings:
+<<<<<<< Updated upstream
   - serializedVersion: 2
+=======
+  - serializedVersion: 5
+>>>>>>> Stashed changes
     name: Very Low
     pixelLightCount: 0
     shadows: 0
@@ -26,8 +30,18 @@ QualitySettings:
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
+<<<<<<< Updated upstream
     vSyncCount: 0
+=======
+    useLegacyDetailDistribution: 1
+    adaptiveVsync: 0
+    vSyncCount: 0
+    realtimeGICPUUsage: 25
+    adaptiveVsyncExtraA: 0
+    adaptiveVsyncExtraB: 0
+>>>>>>> Stashed changes
     lodBias: 0.3
+    meshLodThreshold: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
@@ -41,7 +55,11 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms: []
+<<<<<<< Updated upstream
   - serializedVersion: 2
+=======
+  - serializedVersion: 5
+>>>>>>> Stashed changes
     name: Low
     pixelLightCount: 0
     shadows: 0
@@ -61,8 +79,18 @@ QualitySettings:
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
+<<<<<<< Updated upstream
     vSyncCount: 0
+=======
+    useLegacyDetailDistribution: 1
+    adaptiveVsync: 0
+    vSyncCount: 0
+    realtimeGICPUUsage: 25
+    adaptiveVsyncExtraA: 0
+    adaptiveVsyncExtraB: 0
+>>>>>>> Stashed changes
     lodBias: 0.4
+    meshLodThreshold: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
@@ -76,7 +104,11 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms: []
+<<<<<<< Updated upstream
   - serializedVersion: 2
+=======
+  - serializedVersion: 5
+>>>>>>> Stashed changes
     name: Medium
     pixelLightCount: 1
     shadows: 1
@@ -96,8 +128,18 @@ QualitySettings:
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
+<<<<<<< Updated upstream
     vSyncCount: 1
+=======
+    useLegacyDetailDistribution: 1
+    adaptiveVsync: 0
+    vSyncCount: 1
+    realtimeGICPUUsage: 25
+    adaptiveVsyncExtraA: 0
+    adaptiveVsyncExtraB: 0
+>>>>>>> Stashed changes
     lodBias: 0.7
+    meshLodThreshold: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
@@ -111,7 +153,11 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms: []
+<<<<<<< Updated upstream
   - serializedVersion: 2
+=======
+  - serializedVersion: 5
+>>>>>>> Stashed changes
     name: High
     pixelLightCount: 2
     shadows: 2
@@ -131,8 +177,18 @@ QualitySettings:
     softVegetation: 1
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
+<<<<<<< Updated upstream
     vSyncCount: 1
+=======
+    useLegacyDetailDistribution: 1
+    adaptiveVsync: 0
+    vSyncCount: 1
+    realtimeGICPUUsage: 50
+    adaptiveVsyncExtraA: 0
+    adaptiveVsyncExtraB: 0
+>>>>>>> Stashed changes
     lodBias: 1
+    meshLodThreshold: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
@@ -146,7 +202,11 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms: []
+<<<<<<< Updated upstream
   - serializedVersion: 2
+=======
+  - serializedVersion: 5
+>>>>>>> Stashed changes
     name: Very High
     pixelLightCount: 3
     shadows: 2
@@ -166,8 +226,18 @@ QualitySettings:
     softVegetation: 1
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
+<<<<<<< Updated upstream
     vSyncCount: 1
+=======
+    useLegacyDetailDistribution: 1
+    adaptiveVsync: 0
+    vSyncCount: 1
+    realtimeGICPUUsage: 50
+    adaptiveVsyncExtraA: 0
+    adaptiveVsyncExtraB: 0
+>>>>>>> Stashed changes
     lodBias: 1.5
+    meshLodThreshold: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
@@ -181,7 +251,11 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms: []
+<<<<<<< Updated upstream
   - serializedVersion: 2
+=======
+  - serializedVersion: 5
+>>>>>>> Stashed changes
     name: Ultra
     pixelLightCount: 4
     shadows: 2
@@ -196,13 +270,23 @@ QualitySettings:
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 2
+    antiAliasing: 0
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
+<<<<<<< Updated upstream
     vSyncCount: 1
+=======
+    useLegacyDetailDistribution: 1
+    adaptiveVsync: 0
+    vSyncCount: 1
+    realtimeGICPUUsage: 100
+    adaptiveVsyncExtraA: 0
+    adaptiveVsyncExtraB: 0
+>>>>>>> Stashed changes
     lodBias: 2
+    meshLodThreshold: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
