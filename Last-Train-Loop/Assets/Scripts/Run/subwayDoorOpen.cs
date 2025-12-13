@@ -10,7 +10,7 @@ public class subwayDoorOpen : MonoBehaviour
     
     private bool isOpen = false;         
     private bool cursorOnDoor = false;
-    private Vector3 deltaVector = new Vector3(0, 0, 1);
+    private Vector3 deltaVector = new Vector3(1, 0,0 );
     private Vector3 lstartposition, lendposition, rstartposition, rendposition;
 
     private Coroutine delay;
@@ -33,8 +33,8 @@ public class subwayDoorOpen : MonoBehaviour
     {
         if (cursorOnDoor)
         {
-           /* if (delay != null)
-                StopCoroutine(delay);*/
+            if (delay != null)
+                StopCoroutine(delay);
             if (!isOpen)
             {
                 rightdoor.position = Vector3.Lerp(rstartposition, rendposition, 1f);

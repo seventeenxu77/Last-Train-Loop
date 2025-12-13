@@ -8,6 +8,7 @@ public class clickToleft : MonoBehaviour
     {
         Debug.Log("Êó±êµ¥»÷");
         SubwayRun s = GetComponentInParent<SubwayRun>();
+        LoopManager.Instance.enter_train = true;
         if (s != null) s.left();
     }
 
