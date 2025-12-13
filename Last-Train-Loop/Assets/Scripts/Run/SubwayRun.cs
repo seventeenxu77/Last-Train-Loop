@@ -34,7 +34,7 @@ public class SubwayRun : MonoBehaviour
     }
     public void left()
     {
-       StartCoroutine(MoveTo(leftPosition, leftMoveTime));
+        StartCoroutine(MoveTo(leftPosition, leftMoveTime));
     }
     private IEnumerator MoveTo(Vector3 target, float duration)
     {
