@@ -18,7 +18,7 @@ public class FreeFlyCamera1 : MonoBehaviour // 注意：如果你的文件名是
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // 获取并设置AudioSource
+        // 获取并设置AudioSource 
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = footstepSound;
         audioSource.loop = true;
