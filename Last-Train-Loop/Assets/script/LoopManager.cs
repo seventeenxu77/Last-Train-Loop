@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using NodeCanvas.DialogueTrees;
+using NodeCanvas.Framework;
 
 public class LoopManager : MonoBehaviour
 {
     // 单例模式
+
+    public int ResetTimes = 0;
     public static LoopManager Instance;
 
     private bool isTransitioning = false;
+    [Header("黑板引用")]
+    [SerializeField] private Blackboard GlobalBlackBoard;
     //存储循环id
     public int currentEventID = 0;
     [Header("循环随机化设置")]
@@ -135,6 +141,23 @@ public class LoopManager : MonoBehaviour
         }
     }
 
+    public void UpdateBlackBoard()
+{
+
+// --- 修改点 2: 替换整个函数体 ---
+        if (GlobalBlackBoard != null)
+        {
+            GlobalBlackBoard.SetVariableValue("currentIndex", currentLoopIndex);
+            GlobalBlackBoard.SetVariableValue("currentEventID", currentEventID);
+            GlobalBlackBoard.SetVariableValue("ResetTimes", ResetTimes);
+            GlobalBlackBoard.SetVariableValue("hasException", has_exception);
+        }
+        else
+        {
+            Debug.LogError("LoopManager 脚本上没有关联 GlobalBlackBoard！请在 Inspector 面板中拖拽。");
+        }
+}
+
     // 【新增】将画框复原到初始状态的函数
     private void ResetPoster()
     {
@@ -211,12 +234,15 @@ public class LoopManager : MonoBehaviour
         }
         isTransitioning = true;
         StartCoroutine(LoopTransition());
+        UpdateBlackBoard();
     }
 
     public void ResetLoop()
     {
         currentLoopIndex = 0;
         StartCoroutine(LoopTransition());
+        ResetTimes++;
+        UpdateBlackBoard();
     }
 
     // -----------------------------------------------------
