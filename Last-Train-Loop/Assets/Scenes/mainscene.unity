@@ -13252,11 +13252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eacfa0f97a03a244979a3eda359f273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 7.4, y: 2.7, z: 10000}
-  endPosition: {x: 7.4, y: 2.7, z: 8.15}
-  moveDuration: 5
-  delayBeforeMove: 10
-  leftMoveTime: 10
 --- !u!1 &849427410
 GameObject:
   m_ObjectHideFlags: 0
@@ -20666,7 +20661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293246661}
-  - component: {fileID: 1293246660}
+  - component: {fileID: 1293246662}
   m_Layer: 0
   m_Name: NPC Interact Manager
   m_TagString: Untagged
@@ -20674,20 +20669,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1293246660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293246659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eae13ac50f72214892eaa263d57f27a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seat: {fileID: 272388085}
-  man: {fileID: 1530996328}
 --- !u!4 &1293246661
 Transform:
   m_ObjectHideFlags: 0
@@ -20703,6 +20684,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1700984800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1293246662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293246659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7665c4fd43a4f54dbc207c737b58485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seat: {fileID: 272388085}
+  man: {fileID: 1530996328}
 --- !u!1 &1296537440
 GameObject:
   m_ObjectHideFlags: 0
@@ -21790,8 +21785,8 @@ MonoBehaviour:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: 343.39944, y: -83.007324}
-    _zoomFactor: 0.6955813
+    _translation: {x: 301.42322, y: -163.44925}
+    _zoomFactor: 0.6955616
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
