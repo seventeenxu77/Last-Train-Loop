@@ -73,7 +73,6 @@
     <Compile Include="Assets\script\NPC Connection.cs" />
     <Compile Include="Assets\script\OpenDoor.cs" />
     <Compile Include="Assets\script\Debug\Collision.cs" />
-    <Compile Include="Assets\script\subwayrun.cs" />
     <Compile Include="Assets\script\AddmeshCollider.cs" />
     <Compile Include="Assets\script\manmanout.cs" />
   </ItemGroup>

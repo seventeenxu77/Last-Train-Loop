@@ -16,7 +16,6 @@ public class Subwayrun : MonoBehaviour
     {
         transform.position = startPosition;
         Invoke(nameof(StartMoving), delayBeforeMove);
-     
     }
 
     void StartMoving()
@@ -40,8 +39,8 @@ public class Subwayrun : MonoBehaviour
     }
     private IEnumerator MoveTo( float duration)
     {
-
-        Vector3 start = transform.position;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 start = transform.position,playerStart = player.transform.position;
         float elapsed = 0;
         Vector3 pos = man.transform.position;
         while (elapsed < duration)
@@ -49,6 +48,7 @@ public class Subwayrun : MonoBehaviour
             elapsed += Time.deltaTime;
             transform.position = Vector3.Lerp(start, leftPosition, elapsed / duration);
             man.transform.position= Vector3.Lerp(pos, pos+ leftPosition- endPosition, elapsed / duration);
+            player.transform.position = Vector3.Lerp(playerStart, playerStart + leftPosition - endPosition, elapsed / duration);
             yield return null;
         }
 
