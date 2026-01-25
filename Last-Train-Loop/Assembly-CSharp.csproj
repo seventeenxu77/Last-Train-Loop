@@ -73,6 +73,7 @@
     <Compile Include="Assets\script\TrainTrigger.cs" />
     <Compile Include="Assets\script\Move1.cs" />
     <Compile Include="Assets\script\manyman.cs" />
+    <Compile Include="Assets\script\NPC Connection.cs" />
     <Compile Include="Assets\script\OpenDoor.cs" />
     <Compile Include="Assets\script\subwayrun.cs" />
     <Compile Include="Assets\script\AddmeshCollider.cs" />
