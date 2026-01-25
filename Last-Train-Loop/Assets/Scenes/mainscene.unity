@@ -13146,7 +13146,6 @@ GameObject:
   m_Component:
   - component: {fileID: 846627007}
   - component: {fileID: 846627008}
-  - component: {fileID: 846627009}
   m_Layer: 4
   m_Name: Car
   m_TagString: Untagged
@@ -13240,23 +13239,6 @@ MonoBehaviour:
   delayBeforeMove: 10
   leftMoveTime: 10
   man: {fileID: 1530996329}
---- !u!114 &846627009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846627006}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eacfa0f97a03a244979a3eda359f273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPosition: {x: 7.4, y: 2.7, z: 10000}
-  endPosition: {x: 7.4, y: 2.7, z: 8.15}
-  moveDuration: 5
-  delayBeforeMove: 10
-  leftMoveTime: 10
 --- !u!1 &849427410
 GameObject:
   m_ObjectHideFlags: 0
