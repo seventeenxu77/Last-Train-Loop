@@ -14,8 +14,8 @@ public class NPCConnection : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
-            characterController = GetComponent<CharacterController>();
-            playerController = GetComponent<PlayerController>();
+            characterController = player.GetComponent<CharacterController>();
+            playerController = player.GetComponent<PlayerController>();
         }
     }
     public void PlayerSeatedDown()
@@ -24,13 +24,23 @@ public class NPCConnection : MonoBehaviour
         {
             player.transform.position = seat.position;
             player.transform.LookAt(man.transform.position + new Vector3(0, 0.2f,0));
-            playerController.enabled = false;
+            PlayerDisEnabled();
+        }
+    }
+    public void PlayerDisEnabled()
+    {
+        characterController = player.GetComponent<CharacterController>();
+        if (characterController != null)
+        {
             characterController.enabled = false;
         }
     }
     public void PlayerEnabled()
     {
-        characterController.enabled = true;
-        playerController.enabled = true;
+        characterController = player.GetComponent<CharacterController>();
+        if (characterController != null)
+        {
+            characterController.enabled = true;
+        }
     }
 }

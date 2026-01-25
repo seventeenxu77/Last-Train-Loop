@@ -142,9 +142,7 @@ public class LoopManager : MonoBehaviour
     }
 
     public void UpdateBlackBoard()
-{
-
-// --- 修改点 2: 替换整个函数体 ---
+    { 
         if (GlobalBlackBoard != null)
         {
             GlobalBlackBoard.SetVariableValue("currentIndex", currentLoopIndex);
@@ -156,7 +154,7 @@ public class LoopManager : MonoBehaviour
         {
             Debug.LogError("LoopManager 脚本上没有关联 GlobalBlackBoard！请在 Inspector 面板中拖拽。");
         }
-}
+    }
 
     // 【新增】将画框复原到初始状态的函数
     private void ResetPoster()
@@ -234,7 +232,6 @@ public class LoopManager : MonoBehaviour
         }
         isTransitioning = true;
         StartCoroutine(LoopTransition());
-        UpdateBlackBoard();
     }
 
     public void ResetLoop()
@@ -242,7 +239,6 @@ public class LoopManager : MonoBehaviour
         currentLoopIndex = 0;
         StartCoroutine(LoopTransition());
         ResetTimes++;
-        UpdateBlackBoard();
     }
 
     // -----------------------------------------------------
@@ -362,23 +358,8 @@ public class LoopManager : MonoBehaviour
         Debug.Log($"循环次数 {currentLoopIndex}: 触发事件 ID {currentEventID}");
         switch (currentEventID)
         {
-            case 0:
-                Debug.Log("case 0: 正常场景");
-                animator.SetTrigger("mandown");
-                has_exception = false;
-                break;
-            case 1:
-                Debug.Log("case 1: 正常场景");
-                animator.SetTrigger("mandown");
-                has_exception = false;
-                break;
-            case 2:
-                Debug.Log("case 2: 正常场景");
-                animator.SetTrigger("mandown");
-                has_exception = false;
-                break;
-            case 3:
-                Debug.Log("case 3: 正常场景");
+            case 0 or 1 or 2 or 3: 
+                Debug.Log($"case{currentEventID}: 正常场景");
                 animator.SetTrigger("mandown");
                 has_exception = false;
                 break;
