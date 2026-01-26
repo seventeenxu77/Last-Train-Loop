@@ -8,61 +8,125 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 2f;
 
     [Header("相机旋转设置")]
-    public Transform cameraTransform; // 拖入子物体 Main Camera
+    public Transform cameraTransform;
     public float mouseSensitivity = 200f;
     private float xRotation = 0f;
 
-    [Header("必要组件")]
-    public CharacterController controller; // 拖入自身的 CharacterController
+    [Header("视角晃动设置")]
+    public bool enableHeadBob = true;
+    public float bobAmplitude = 0.05f;
+    public float bobFrequency = 10.0f;
+    private float defaultCameraY;
+    private float bobTimer = 0f;
 
-    private Vector3 velocity; // 用于处理重力和跳跃的速度
-    private bool isGrounded;  // 是否在地面上
+    // [新增] --- 音频设置 ---
+    [Header("音频设置")]
+    public AudioSource footstepSource; // 拖入挂载了 AudioSource 的物体
+    // ----------------------
+
+    [Header("必要组件")]
+    public CharacterController controller;
+
+    private Vector3 velocity;
+    private bool isGrounded;
 
     void Start()
     {
-        // 游戏开始时隐藏并锁定鼠标，防止鼠标滑出窗口
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (cameraTransform != null)
+        {
+            defaultCameraY = cameraTransform.localPosition.y;
+        }
     }
 
     void Update()
     {
-        // 1. 检测是否在地面上
+        // 1. 地面检测
         isGrounded = controller.isGrounded;
         if (isGrounded && velocity.y < 0)
         {
-            // 在地面时重置下落速度（设置一个小的负值确保角色贴地）
             velocity.y = -2f;
         }
 
-        // 2. 处理视角旋转 (鼠标)
+        // 2. 视角旋转
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // 左右旋转：旋转整个玩家身体
         transform.Rotate(Vector3.up * mouseX);
 
-        // 上下旋转：只旋转相机，并限制视角在 -90 到 90 度之间
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        // 3. 处理水平移动 (WASD)
+        // 3. 移动输入
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        // 根据玩家当前面向的方向来计算移动向量
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * moveSpeed * Time.deltaTime);
 
-        // 4. 处理跳跃
+        // 视角晃动
+        HandleHeadBob(x, z);
+
+        // [新增] --- 处理脚步声 ---
+        HandleFootstepAudio(x, z);
+        // -----------------------
+
+        // 4. 跳跃
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            // 跳跃物理公式：v = sqrt(h * -2 * g)
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        // 5. 应用重力
+        // 5. 重力
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void HandleHeadBob(float inputX, float inputZ)
+    {
+        if (!enableHeadBob || cameraTransform == null) return;
+
+        if (isGrounded && (Mathf.Abs(inputX) > 0.1f || Mathf.Abs(inputZ) > 0.1f))
+        {
+            bobTimer += Time.deltaTime * bobFrequency;
+            float newY = defaultCameraY + Mathf.Sin(bobTimer) * bobAmplitude;
+            cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, newY, cameraTransform.localPosition.z);
+        }
+        else
+        {
+            bobTimer = 0;
+            float newY = Mathf.Lerp(cameraTransform.localPosition.y, defaultCameraY, Time.deltaTime * 10f);
+            cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, newY, cameraTransform.localPosition.z);
+        }
+    }
+
+    // [新增] 脚步声控制逻辑
+    void HandleFootstepAudio(float inputX, float inputZ)
+    {
+        // 如果没有赋值 AudioSource，直接返回，防止报错
+        if (footstepSource == null) return;
+
+        // 判断玩家是否在移动 (输入不为0) 且 在地面上
+        bool isMoving = Mathf.Abs(inputX) > 0.1f || Mathf.Abs(inputZ) > 0.1f;
+
+        // 逻辑：如果在地面上 且 在移动
+        if (isGrounded && isMoving)
+        {
+            // 如果当前没有在播放声音，才开始播放（防止每帧重复调用 Play 导致声音鬼畜）
+            if (!footstepSource.isPlaying)
+            {
+                footstepSource.Play();
+            }
+        }
+        else
+        {
+            // 如果停下来了 或者 跳在空中，且声音正在播放，则停止
+            if (footstepSource.isPlaying)
+            {
+                footstepSource.Stop(); // 或者用 footstepSource.Pause();
+            }
+        }
     }
 }
