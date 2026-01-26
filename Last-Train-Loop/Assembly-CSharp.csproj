@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\script\PlayerController.cs" />
     <Compile Include="Assets\script\LoopManager.cs" />
-    <Compile Include="Assets\script\hint_normal.cs" />
     <Compile Include="Assets\script\AudioTrigger.cs" />
     <Compile Include="Assets\script\UItext.cs" />
     <Compile Include="Assets\script\StairsTrigger.cs" />

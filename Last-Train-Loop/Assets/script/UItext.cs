@@ -9,21 +9,18 @@ public class UItext : MonoBehaviour
     // 显示时长（秒）
     [SerializeField] private float displayDuration = 3f;
 
-    private void Awake()
-    {
-        textUI.SetActive(false);   
-    }
     void OnTriggerEnter(Collider other)
     {
-        int index = LoopManager.Instance.currentLoopIndex;
+        int index=LoopManager.Instance.currentLoopIndex;
         if (other.CompareTag("Player"))
         {
             // 激活文本
+            Debug.Log("与玩家碰撞");
             TextMeshProUGUI txt = textUI.GetComponent<TextMeshProUGUI>();
-            txt.text = $"11:{(index + 1) * 10}";
+            txt.text = $"11:{(index+1)*10}";
             textUI.SetActive(true);
 
-            // 如果是暂时显示
+            // 如果是临时显示，启动协程
             if (displayDuration > 0)
             {
                 StartCoroutine(HideTextAfterDelay());
