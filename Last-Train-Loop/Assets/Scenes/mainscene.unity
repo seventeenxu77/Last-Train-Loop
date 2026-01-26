@@ -13873,8 +13873,8 @@ MonoBehaviour:
   ResetTimes: 0
   GlobalBlackBoard: {fileID: 1920485767}
   currentEventID: 0
-  stationText: {fileID: 0}
-  hintnorma: {fileID: 0}
+  stationText: {fileID: 1766941926}
+  hintnorma: {fileID: 1220053524}
   car: {fileID: 846627006}
   loud: {fileID: 1267563564}
   strangeManInScene: {fileID: 1703909914}
@@ -46906,8 +46906,8 @@ MonoBehaviour:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: 318.58798, y: -63.05521}
-    _zoomFactor: 0.716692
+    _translation: {x: 71, y: -20}
+    _zoomFactor: 0.54380083
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -50945,7 +50945,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1917534664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eae13ac50f72214892eaa263d57f27a, type: 3}
+  m_Script: {fileID: 11500000, guid: d7665c4fd43a4f54dbc207c737b58485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   seat: {fileID: 272388085}
@@ -57526,8 +57526,8 @@ MonoBehaviour:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: 481.78406, y: 167.61287}
-    _zoomFactor: 0.25008819
+    _translation: {x: 29, y: -60}
+    _zoomFactor: 0.6608292
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
