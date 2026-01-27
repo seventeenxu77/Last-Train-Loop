@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 52
+  controlID: 102
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 53
+  controlID: 47
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 54
+  controlID: 48
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 315.33334
     height: 345.33334
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -414,10 +414,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 1672.6666}
-      m_SelectedIDs: 74800000
-      m_LastClickedID: 32884
-      m_ExpandedIDs: 20fbffffb4750000a27900003c7e0000207f0000387f0000
+      scrollPos: {x: 0, y: 3284.6667}
+      m_SelectedIDs: 7c780000
+      m_LastClickedID: 30844
+      m_ExpandedIDs: 9ce0ffffa0e0ffffa4e0ffffcce6fffff4e6ffff7ee9ffff82e9ffff86e9ffff20fbffffb47500009c770000a2790000207c0000847d0000ec7d0000387f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -797,9 +797,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.3998647, y: 2.7713535, z: 16.470636}
+    m_Target: {x: -7.5114584, y: -0.95168686, z: 16.31564}
     speed: 2
-    m_Value: {x: 6.3998647, y: 2.7713535, z: 16.470636}
+    m_Value: {x: -7.5114584, y: -0.95168686, z: 16.31564}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -845,13 +845,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08808222, y: -0.50051105, z: 0.05877762, w: -0.8601746}
+    m_Target: {x: 0.28304565, y: -0.5249432, z: 0.19006255, w: 0.78024757}
     speed: 2
-    m_Value: {x: -0.088010736, y: -0.5001049, z: 0.05872992, w: -0.85947657}
+    m_Value: {x: 0.28296217, y: -0.5247883, z: 0.1900065, w: 0.78001744}
   m_Size:
-    m_Target: 0.5234532
+    m_Target: 4.603481
     speed: 2
-    m_Value: 0.5234532
+    m_Value: 4.603481
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -931,14 +931,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/script
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Group Git\Last-Train-Loop
+  m_LastProjectPath: C:\Users\ASUS\Desktop\Last-Train-Loop-main\Last-Train-Loop
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 1a960000
-    m_LastClickedID: 38426
-    m_ExpandedIDs: 00000000d49500001a96000000ca9a3b
+    m_SelectedIDs: 32960000
+    m_LastClickedID: 38450
+    m_ExpandedIDs: 00000000d495000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
