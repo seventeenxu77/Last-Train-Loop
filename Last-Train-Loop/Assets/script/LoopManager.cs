@@ -283,7 +283,8 @@ public class LoopManager : MonoBehaviour
         // 3. 等待动画或移动效果启动 (例如 2 秒)
         yield return new WaitForSeconds(1.0f);
         Subwayrun ss = car.GetComponent<Subwayrun>();
-        ss.left();
+        if (ss != null) ss.left();
+        else Debug.Log("未调用left函数");
         // 4. 显示游戏结束文本
         if (gameEndText != null)
         {

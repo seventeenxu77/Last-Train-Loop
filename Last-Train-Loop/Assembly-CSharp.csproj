@@ -65,7 +65,6 @@
     <Compile Include="Assets\script\AudioTrigger.cs" />
     <Compile Include="Assets\script\UItext.cs" />
     <Compile Include="Assets\script\StairsTrigger.cs" />
-    <Compile Include="Assets\script\subwayrun(1).cs" />
     <Compile Include="Assets\script\TrainTrigger.cs" />
     <Compile Include="Assets\script\Move1.cs" />
     <Compile Include="Assets\script\manyman.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="Assets\script\OpenDoor.cs" />
     <Compile Include="Assets\script\Debug\Collision.cs" />
     <Compile Include="Assets\script\AddmeshCollider.cs" />
+    <Compile Include="Assets\script\Subwayrun.cs" />
     <Compile Include="Assets\script\manmanout.cs" />
   </ItemGroup>
   <ItemGroup>

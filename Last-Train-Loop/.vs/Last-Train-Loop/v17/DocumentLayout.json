@@ -1,61 +1,55 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\",
+  "WorkspaceRootPath": "E:\\Group Git\\Last-Train-Loop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\loopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|e:\\group git\\last-train-loop\\assets\\script\\loopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\loopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|c:\\users\\asus\\desktop\\last-train-loop-main\\last-train-loop\\assets\\script\\npc connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\npc connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\npc connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\uitext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\uitext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\uitext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\subwayrun(1).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\subwayrun(1).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\stairstrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\stairstrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\stairstrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\traintrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\traintrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\traintrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\manmanout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\manmanout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manmanout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\audiotrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\audiotrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\audiotrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\move1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\move1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\move1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\assets\\script\\manyman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|E:\\Group Git\\Last-Train-Loop\\assets\\script\\manyman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manyman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\subwayrun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\script\\subwayrun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\subwayrun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\hint_normal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\script\\hint_normal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\hint_normal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -71,22 +65,21 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "NPC Connection.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\NPC Connection.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\NPC Connection.cs",
               "RelativeDocumentMoniker": "Assets\\script\\NPC Connection.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\NPC Connection.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\NPC Connection.cs",
               "RelativeToolTip": "Assets\\script\\NPC Connection.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAAwBoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T05:54:38.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T05:54:38.587Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\PlayerController.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\script\\PlayerController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\PlayerController.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\PlayerController.cs",
               "RelativeToolTip": "Assets\\script\\PlayerController.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAIwCUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -94,23 +87,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "subwayrun.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\subwayrun.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\subwayrun.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\subwayrun.cs",
-              "RelativeToolTip": "Assets\\script\\subwayrun.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-14T13:36:19.822Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "AudioTrigger.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\AudioTrigger.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\AudioTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\script\\AudioTrigger.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\AudioTrigger.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\AudioTrigger.cs",
               "RelativeToolTip": "Assets\\script\\AudioTrigger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -118,11 +109,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "manmanout.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\manmanout.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\manmanout.cs",
               "RelativeDocumentMoniker": "Assets\\script\\manmanout.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\manmanout.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\manmanout.cs",
               "RelativeToolTip": "Assets\\script\\manmanout.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -130,11 +121,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Move1.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\Move1.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\Move1.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Move1.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\Move1.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\Move1.cs",
               "RelativeToolTip": "Assets\\script\\Move1.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAADwvxcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -142,11 +133,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "TrainTrigger.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\TrainTrigger.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\TrainTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\script\\TrainTrigger.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\TrainTrigger.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\TrainTrigger.cs",
               "RelativeToolTip": "Assets\\script\\TrainTrigger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -156,11 +147,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LoopManager.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\LoopManager.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\LoopManager.cs",
               "RelativeDocumentMoniker": "Assets\\script\\LoopManager.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\LoopManager.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\LoopManager.cs",
               "RelativeToolTip": "Assets\\script\\LoopManager.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAvwFIAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABIBAAAAAAAAAAAjwBwBAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-08T10:34:40.049Z",
               "EditorCaption": ""
@@ -168,22 +159,10 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "subwayrun(1).cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\subwayrun(1).cs",
-              "RelativeDocumentMoniker": "Assets\\script\\subwayrun(1).cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\subwayrun(1).cs",
-              "RelativeToolTip": "Assets\\script\\subwayrun(1).cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T11:29:29.419Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "StairsTrigger.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\StairsTrigger.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\StairsTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\script\\StairsTrigger.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\StairsTrigger.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\StairsTrigger.cs",
               "RelativeToolTip": "Assets\\script\\StairsTrigger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -193,9 +172,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "UItext.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\UItext.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\UItext.cs",
               "RelativeDocumentMoniker": "Assets\\script\\UItext.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\UItext.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\UItext.cs",
               "RelativeToolTip": "Assets\\script\\UItext.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAwwAIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -203,11 +182,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "manyman.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\manyman.cs",
+              "DocumentMoniker": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\manyman.cs",
               "RelativeDocumentMoniker": "Assets\\script\\manyman.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\manyman.cs",
+              "ToolTip": "E:\\Group Git\\Last-Train-Loop\\Assets\\script\\manyman.cs",
               "RelativeToolTip": "Assets\\script\\manyman.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAkwA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -215,24 +194,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "hint_normal.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\hint_normal.cs",
-              "RelativeDocumentMoniker": "Assets\\script\\hint_normal.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\Last-Train-Loop-main\\Last-Train-Loop\\Assets\\script\\hint_normal.cs",
-              "RelativeToolTip": "Assets\\script\\hint_normal.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAC8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-14T09:11:03.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "UI test.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs",
               "ToolTip": "C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAiwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-14T11:12:45.093Z"

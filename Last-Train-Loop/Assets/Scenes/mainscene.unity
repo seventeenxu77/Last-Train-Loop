@@ -17833,7 +17833,6 @@ GameObject:
   m_Component:
   - component: {fileID: 846627007}
   - component: {fileID: 846627008}
-  - component: {fileID: 846627009}
   m_Layer: 4
   m_Name: Car
   m_TagString: Untagged
@@ -17926,19 +17925,7 @@ MonoBehaviour:
   moveDuration: 10
   delayBeforeMove: 10
   leftMoveTime: 10
-  man: {fileID: 0}
---- !u!114 &846627009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846627006}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eacfa0f97a03a244979a3eda359f273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  man: {fileID: 2140069274}
 --- !u!1 &855607416
 GameObject:
   m_ObjectHideFlags: 0
@@ -53103,7 +53090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d021c4ee8f020e499af59c3f5e6980a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textUI: {fileID: 0}
+  textUI: {fileID: 638815040}
   displayDuration: 3
 --- !u!65 &2045419910
 BoxCollider:
