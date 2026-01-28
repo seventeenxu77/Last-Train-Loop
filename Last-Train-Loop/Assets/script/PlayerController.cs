@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 2f;
 
     [Header("相机旋转设置")]
-    public Transform cameraTransform;
+    public Transform cameraTransform,handCameraTransform;
     public float mouseSensitivity = 200f;
     private float xRotation = 0f;
 
@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        handCameraTransform.localRotation = cameraTransform.localRotation;
 
         // 3. 移动输入
         float x = Input.GetAxis("Horizontal");

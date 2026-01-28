@@ -62,6 +62,7 @@ public class LoopManager : MonoBehaviour
     private GameObject dynamicContentParent;
 
     public bool has_exception =false;
+    public bool isDarkLoop = false;
     void Awake()
     {
         if (Instance == null)
@@ -149,6 +150,7 @@ public class LoopManager : MonoBehaviour
             GlobalBlackBoard.SetVariableValue("currentEventID", currentEventID);
             GlobalBlackBoard.SetVariableValue("ResetTimes", ResetTimes);
             GlobalBlackBoard.SetVariableValue("hasException", has_exception);
+            GlobalBlackBoard.SetVariableValue("isDarkLoop", isDarkLoop); 
         }
         else
         {
@@ -311,10 +313,24 @@ public class LoopManager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-
+    void checkIsDarkLoop()
+    {
+        SetDarkLoop setDarkLoop = GameObject.Find("DarkLoop").GetComponent<SetDarkLoop>();
+        if (setDarkLoop == null) Debug.LogWarning("未找到setDarkLoop");
+        else Debug.Log("找到set");
+        setDarkLoop.gameObject.SetActive(true);
+        if (isDarkLoop)
+        {
+            setDarkLoop.ActiveAll();
+        }
+        else setDarkLoop.InActiveAll();
+    }
     void GenerateLoopContent()
     {
-        ResetPoster();
+        isDarkLoop = false;
+        SetDarkLoop setDarkLoop = GameObject.Find("DarkLoop").GetComponent<SetDarkLoop>();
+        setDarkLoop.InActiveAll();
+        ResetPoster();
         Animator animator = strangeManInScene.GetComponent<Animator>();
         Transform parent = dynamicContentParent.transform;
         // 默认显示1隐藏2
@@ -357,15 +373,16 @@ public class LoopManager : MonoBehaviour
             currentEventID = 8;
         }
         Debug.Log($"循环次数 {currentLoopIndex}: 触发事件 ID {currentEventID}");
-        switch (currentEventID)
+        switch (currentEventID)
         {
             case 0 or 1 or 2 or 3: 
                 Debug.Log($"case{currentEventID}: 正常场景");
                 animator.SetTrigger("mandown");
                 has_exception = false;
-                break;
+                break;
             case 4:
-                Debug.Log("case 4: 出现奇怪的人");
+                isDarkLoop = true;
+                Debug.Log("case 4: 出现奇怪的人");       
                 if (strangeManInScene != null)
                 {
                     if (animator != null)
@@ -425,5 +442,7 @@ public class LoopManager : MonoBehaviour
         if (poster2!= null) poster2.SetActive(showposter2);
         if (adv1 != null) adv1.SetActive(showadv1);
         if (adv2 != null) adv2.SetActive(showadv2);
-    }
+        UpdateBlackBoard();
+        checkIsDarkLoop();
+    }
 }

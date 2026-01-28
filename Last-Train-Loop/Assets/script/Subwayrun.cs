@@ -16,9 +16,11 @@ public class Subwayrun : MonoBehaviour
     [Header("引用")]
     public GameObject man;
 
+    GameObject player;
     void Start()
     {
         transform.position = startPosition;
+        player = GameObject.FindGameObjectWithTag("Player");
         Invoke(nameof(StartMoving), delayBeforeMove);
     }
 
@@ -53,10 +55,11 @@ public class Subwayrun : MonoBehaviour
     private IEnumerator MoveTo(float duration)
     {
         Vector3 start = transform.position;
-        Vector3 playerStartPos = man.transform.position;
+        Vector3 manStartPos = man.transform.position;
         // 计算玩家相对于列车的最终偏移目标
-        Vector3 playerEndPos = playerStartPos + (leftPosition - endPosition);
-        
+        Vector3 manEndPos = manStartPos + (leftPosition - endPosition);
+        Vector3 playerStartPos = player.transform.position, playerEndPos = player.transform.position + (leftPosition - endPosition);
+
         float elapsed = 0;
         while (elapsed < duration)
         {
@@ -67,8 +70,8 @@ public class Subwayrun : MonoBehaviour
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
 
             transform.position = Vector3.Lerp(start, leftPosition, smoothT);
-            man.transform.position = Vector3.Lerp(playerStartPos, playerEndPos, smoothT);
-            
+            man.transform.position = Vector3.Lerp(manStartPos, manEndPos, smoothT);
+            player.transform.position = Vector3.Lerp(playerStartPos, playerEndPos, smoothT);
             yield return null;
         }
         transform.position = leftPosition;

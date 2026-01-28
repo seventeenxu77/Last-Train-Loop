@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class NPCConnection : MonoBehaviour
 {
-    public Transform seat, man;
+    [Header("对话相关")]
+    public Transform seat;
+    public Transform man;
+   
     //player相关
     GameObject player;
     CharacterController characterController;
-    PlayerController playerController;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
             characterController = player.GetComponent<CharacterController>();
-            playerController = player.GetComponent<PlayerController>();
         }
     }
     public void PlayerSeatedDown()

@@ -16,7 +16,6 @@ public class OpenDoor : MonoBehaviour
     {
         StartCoroutine("doorRotate");  
         isOpen = !isOpen;
-        Debug.Log("门的状态改变");
     }
     private IEnumerator doorRotate()
     {
