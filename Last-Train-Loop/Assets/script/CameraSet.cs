@@ -22,5 +22,11 @@ public class CameraSet : MonoBehaviour
                 isUsingMain = !isUsingMain;
             }
         }
+        else
+        {
+            isUsingMain = true;
+            cams[1].enabled = false;
+            Camera.main.enabled = true;
+        }
     }
 }

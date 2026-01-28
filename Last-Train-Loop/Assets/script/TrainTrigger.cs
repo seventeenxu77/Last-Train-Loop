@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class TrainTrigger : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public void TrainJudge()
     {
-        // 确保只有玩家触发
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("进入列车，触发下一循环");
-            if (!LoopManager.Instance.has_exception) LoopManager.Instance.StartNewLoop();
-            else LoopManager.Instance.ResetLoop();
-        }
+        GameObject.Find("stairbox").GetComponent<StairsTrigger>().toOrigin = false;
+        Debug.Log("进入列车，触发下一循环");
+        if (!LoopManager.Instance.has_exception) { Debug.Log("调用TrainTrigger的startNew"); LoopManager.Instance.StartNewLoop(); }
+        else LoopManager.Instance.ResetLoop();
+
     }
 }

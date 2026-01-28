@@ -152,10 +152,6 @@ public class LoopManager : MonoBehaviour
             GlobalBlackBoard.SetVariableValue("hasException", has_exception);
             GlobalBlackBoard.SetVariableValue("isDarkLoop", isDarkLoop); 
         }
-        else
-        {
-            Debug.LogError("LoopManager 脚本上没有关联 GlobalBlackBoard！请在 Inspector 面板中拖拽。");
-        }
     }
 
     // 【新增】将画框复原到初始状态的函数
@@ -317,19 +313,17 @@ public class LoopManager : MonoBehaviour
     {
         SetDarkLoop setDarkLoop = GameObject.Find("DarkLoop").GetComponent<SetDarkLoop>();
         if (setDarkLoop == null) Debug.LogWarning("未找到setDarkLoop");
-        else Debug.Log("找到set");
         setDarkLoop.gameObject.SetActive(true);
-        if (isDarkLoop)
-        {
-            setDarkLoop.ActiveAll();
-        }
+        if (isDarkLoop) setDarkLoop.ActiveAll();
         else setDarkLoop.InActiveAll();
     }
     void GenerateLoopContent()
     {
+        //管理黑夜关卡
         isDarkLoop = false;
-        SetDarkLoop setDarkLoop = GameObject.Find("DarkLoop").GetComponent<SetDarkLoop>();
-        setDarkLoop.InActiveAll();
+        //SetDarkLoop setDarkLoop = GameObject.Find("DarkLoop").GetComponent<SetDarkLoop>();
+        //setDarkLoop.InActiveAll();
+
         ResetPoster();
         Animator animator = strangeManInScene.GetComponent<Animator>();
         Transform parent = dynamicContentParent.transform;

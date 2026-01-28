@@ -68,6 +68,7 @@
     <Compile Include="Assets\script\GhostMove.cs" />
     <Compile Include="Assets\script\StairsTrigger.cs" />
     <Compile Include="Assets\script\LightManager.cs" />
+    <Compile Include="Assets\script\DarkLoopTextTrigger.cs" />
     <Compile Include="Assets\script\TrainTrigger.cs" />
     <Compile Include="Assets\script\CameraSet.cs" />
     <Compile Include="Assets\script\Move1.cs" />
