@@ -2,7 +2,6 @@ using UnityEngine;
 public class CameraSet : MonoBehaviour
 {
     [SerializeField]public Camera[] cams;   
-    int idx = 0;
     public bool isUsingMain;
     private void Start()
     {
@@ -14,19 +13,25 @@ public class CameraSet : MonoBehaviour
     {
         if (LoopManager.Instance.isDarkLoop)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKey(KeyCode.F))
             {
-                cams[idx].enabled = false;
-                idx = (idx + 1) % cams.Length;
-                cams[idx].enabled = true;
-                isUsingMain = !isUsingMain;
+                cams[0].enabled = false;
+                isUsingMain = false;
+                cams[1].enabled = true;
+                
+            }
+            else
+            {
+                cams[0].enabled = true;
+                isUsingMain = true;
+                cams[1].enabled = false;
             }
         }
         else
         {
+            cams[0].enabled = true;
             isUsingMain = true;
             cams[1].enabled = false;
-            Camera.main.enabled = true;
         }
     }
 }
