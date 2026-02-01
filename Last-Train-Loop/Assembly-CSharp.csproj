@@ -60,24 +60,18 @@
     <Analyzer Include="E:\Unity\2022.3.62f2c1\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\script\PlayerController.cs" />
     <Compile Include="Assets\script\SetDarkLoop.cs" />
-    <Compile Include="Assets\script\LoopManager.cs" />
     <Compile Include="Assets\script\AudioTrigger.cs" />
     <Compile Include="Assets\script\UItext.cs" />
     <Compile Include="Assets\script\GhostMove.cs" />
-    <Compile Include="Assets\script\StairsTrigger.cs" />
     <Compile Include="Assets\script\LightManager.cs" />
     <Compile Include="Assets\script\DarkLoopTextTrigger.cs" />
     <Compile Include="Assets\script\TrainTrigger.cs" />
     <Compile Include="Assets\script\CameraSet.cs" />
     <Compile Include="Assets\script\Move1.cs" />
     <Compile Include="Assets\script\manyman.cs" />
-    <Compile Include="Assets\script\NPC Connection.cs" />
-    <Compile Include="Assets\script\OpenDoor.cs" />
     <Compile Include="Assets\script\Debug\Collision.cs" />
     <Compile Include="Assets\script\AddmeshCollider.cs" />
-    <Compile Include="Assets\script\Subwayrun.cs" />
     <Compile Include="Assets\script\manmanout.cs" />
   </ItemGroup>
   <ItemGroup>
