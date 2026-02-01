@@ -6870,8 +6870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8c30bfe7fdcff459f0818d8369312f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openAngle: 90
-  duration: 1.2
 --- !u!64 &296803785
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9056,6 +9054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421446134}
+  - component: {fileID: 421446137}
   - component: {fileID: 421446133}
   - component: {fileID: 421446138}
   m_Layer: 0
@@ -9096,6 +9095,22 @@ Transform:
   - {fileID: 1498045185}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421446137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421446132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325bf5abfb8b8a94ab9360d3d4306c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cams:
+  - {fileID: 2114488005}
+  - {fileID: 1249289868}
+  isUsingMain: 0
 --- !u!114 &421446138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14867,7 +14882,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResetTimes: 0
-  portal: {fileID: 0}
   GlobalBlackBoard: {fileID: 1920485767}
   currentEventID: 0
   stationText: {fileID: 1766941926}
@@ -52874,7 +52888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghostBornPlace: {x: -19, y: 12, z: 38}
   checkLight: {fileID: 1151602646}
-  caScript: {fileID: 0}
+  caScript: {fileID: 421446137}
 --- !u!135 &1767515436
 SphereCollider:
   m_ObjectHideFlags: 0
