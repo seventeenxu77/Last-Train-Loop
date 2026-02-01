@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{6824497C-8251-FFBD-6EA6-968FAEEAD7F7}|NodeCanvas.csproj|solutionrelative:assets\\paradoxnotion\\nodecanvas\\modules\\dialoguetrees\\dialoguegui\\dialogueugui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\assets\\script\\traintrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|c:\\users\\sq\\desktop\\gamefolder\\last-train-loop\\assets\\script\\traintrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\traintrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -43,6 +43,10 @@
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\move1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\assets\\script\\uitext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\uitext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\assets\\script\\manyman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{547CFCED-B36A-0045-DDC4-E5684ED024D3}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manyman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -61,10 +65,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\assets\\script\\uitext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\script\\uitext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -88,7 +88,7 @@
               "RelativeDocumentMoniker": "Assets\\ParadoxNotion\\NodeCanvas\\Modules\\DialogueTrees\\DialogueGUI\\DialogueUGUI.cs",
               "ToolTip": "C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\Assets\\ParadoxNotion\\NodeCanvas\\Modules\\DialogueTrees\\DialogueGUI\\DialogueUGUI.cs",
               "RelativeToolTip": "Assets\\ParadoxNotion\\NodeCanvas\\Modules\\DialogueTrees\\DialogueGUI\\DialogueUGUI.cs",
-              "ViewState": "AgIAAAcBAAAAAAAAAADwvxUBAACCAAAAAAAAAA==",
+              "ViewState": "AgIAAAkBAAAAAAAAAADwvy8BAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-23T12:01:21.429Z",
               "EditorCaption": ""
@@ -163,7 +163,8 @@
               "RelativeToolTip": "Assets\\script\\TrainTrigger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T10:49:06.198Z"
+              "WhenOpened": "2025-12-08T10:49:06.198Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -203,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 10,
               "Title": "UItext.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\Assets\\script\\UItext.cs",
               "RelativeDocumentMoniker": "Assets\\script\\UItext.cs",
@@ -215,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "manyman.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\Assets\\script\\manyman.cs",
               "RelativeDocumentMoniker": "Assets\\script\\manyman.cs",
@@ -227,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "hint_normal.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\gamefolder\\Last-Train-Loop\\Assets\\script\\hint_normal.cs",
               "RelativeDocumentMoniker": "Assets\\script\\hint_normal.cs",
@@ -239,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "UI test.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs",
               "RelativeDocumentMoniker": "..\\..\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Assets\\script\\UI test.cs",
@@ -251,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ActionBasedContinuousMoveProvider.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.5\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousMoveProvider.cs",
               "RelativeDocumentMoniker": "..\\..\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.5\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousMoveProvider.cs",
@@ -264,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "TrackedPoseDriver.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Library\\PackageCache\\com.unity.inputsystem@1.14.0\\InputSystem\\Plugins\\XR\\TrackedPoseDriver.cs",
               "RelativeDocumentMoniker": "..\\..\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Library\\PackageCache\\com.unity.inputsystem@1.14.0\\InputSystem\\Plugins\\XR\\TrackedPoseDriver.cs",
@@ -277,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "XRInteractionManager.cs",
               "DocumentMoniker": "C:\\Users\\SQ\\Desktop\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.5\\Runtime\\Interaction\\XRInteractionManager.cs",
               "RelativeDocumentMoniker": "..\\..\\Last-Train-Loop\\Last-Train-Loop\\Last-Train-Loop\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.5\\Runtime\\Interaction\\XRInteractionManager.cs",

@@ -191,7 +191,7 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
                     tempText += c;
                     yield return StartCoroutine(DelayPrint(subtitleDelays.characterDelay));
                     PlayTypeSound();
-                    if (c == '。' || c == '!' || c == '！' || c == '?' || c == '？')
+                    if (c == '.' || c == '。' || c == '!' || c == '！' || c == '?' || c == '？')
                     {
                         yield return StartCoroutine(DelayPrint(subtitleDelays.sentenceDelay));
                         PlayTypeSound();

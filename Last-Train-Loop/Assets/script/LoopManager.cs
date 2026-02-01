@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using NodeCanvas.DialogueTrees;
 using NodeCanvas.Framework;
 
 public class LoopManager : MonoBehaviour
@@ -27,6 +28,10 @@ public class LoopManager : MonoBehaviour
     private Vector3 initialPosterPosition;
     private Quaternion initialPosterRotation;
     private Rigidbody posterRigidbody;
+
+    [Header("UI 引用")]
+    public TextMeshProUGUI stationText;
+    [SerializeField] private GameObject hintnorma;
     // 【新增】场景中已存在的人物引用
     [Header("列车")]
     public GameObject car; // car
@@ -48,6 +53,7 @@ public class LoopManager : MonoBehaviour
     public int currentLoopIndex = 0;
     [Header("通关设置")]
     public TextMeshProUGUI gameEndText; // 用于显示 "游戏结束"
+    public GameObject trainMovementController; // 控制列车移动的脚本所在的对象
 
     // 玩家出生点 (用于每次循环开始时传送玩家)
     public Transform playerSpawnPoint;
@@ -77,6 +83,7 @@ public class LoopManager : MonoBehaviour
         dynamicContentParent = new GameObject("Dynamic Content");
         AudioTrigger dd = loud.GetComponent<AudioTrigger>();
         gameEndText.gameObject.SetActive(false);
+        hintnorma.SetActive(false);
         strangeManInScene.SetActive(true);
         // ------------------------------------------------------------------
         // 【关键新增代码】：在游戏启动时，确保所有备用模型都是隐藏的
@@ -89,7 +96,10 @@ public class LoopManager : MonoBehaviour
         if (model_1 != null) model_1.SetActive(true);
         if (poster1 != null) poster1.SetActive(true);
         if (adv1 != null) adv1.SetActive(true);
-   
+        if (stationText != null)
+        {
+            stationText.gameObject.SetActive(false);
+        }
         // 【新增】获取 Rigidbody 并保存初始状态
         if (poster != null)
         {
@@ -354,10 +364,10 @@ public class LoopManager : MonoBehaviour
         {
             currentEventID = 12;
         }
-        //if (currentLoopIndex == 2)
-        //{
-        //    currentEventID = 11;
-        //}
+        if (currentLoopIndex == 2)
+        {
+            currentEventID = 11;
+        }
         if (currentLoopIndex == 5)
         {
             currentEventID = 8;
