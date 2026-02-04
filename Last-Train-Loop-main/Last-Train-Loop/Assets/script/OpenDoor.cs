@@ -59,13 +59,31 @@ public class OpenDoor : MonoBehaviour
     }
 
     // --- 调试工具 ---
-    void Update()
+void Update()
+{
+    if (Input.GetKeyDown(KeyCode.E)) // 或者是 KeyCode.O
     {
-        // 如果点击无效，请在运行中按下键盘 O 键
-        if (Input.GetKeyDown(KeyCode.E))
+        Debug.Log("检测到按键按下！"); // 看看这行出不出
+        
+        // 如果你加了距离判断
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null)
         {
-            Debug.Log("键盘测试：E 键按下");
-            openDoor();
+            float dist = Vector3.Distance(transform.position, player.transform.position);
+            Debug.Log("当前距离门: " + dist);
+            if(dist < 2.0f) 
+            {
+                openDoor();
+            }
+            else
+            {
+                Debug.Log("太远了，开不了");
+            }
+        }
+        else
+        {
+            Debug.LogError("没找到标签为 Player 的物体！");
         }
     }
+}
 }

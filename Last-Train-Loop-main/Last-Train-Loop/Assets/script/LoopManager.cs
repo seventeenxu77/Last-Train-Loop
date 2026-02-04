@@ -189,21 +189,41 @@ public class LoopManager : MonoBehaviour
             if (controller != null) controller.enabled = true;
         }
     }
-    void TeleportPlayerToSpawnend()
-    {
-        GameObject player = GameObject.FindWithTag("Player"); // 确保您的玩家对象有 Tag: Player
-        if (player != null && playerSpawnPointend != null)
-        {
-            // 注意：如果玩家使用的是 CharacterController 组件，可能需要先禁用再启用
-            CharacterController controller = player.GetComponent<CharacterController>();
-            if (controller != null) controller.enabled = false;
+void TeleportPlayerToSpawnend()
+{
+    GameObject player = GameObject.FindWithTag("Player"); 
+    if (player != null && playerSpawnPointend != null)
+    {
+        // 1. 彻底禁用 CharacterController
+        CharacterController cc = player.GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
 
-            player.transform.position = playerSpawnPointend.position;
-            player.transform.rotation = playerSpawnPointend.rotation;
+        // 2. 【关键】寻找并禁用你所有的玩家移动脚本
+        // 假设你的移动脚本叫 PlayerMovement 或 FPSController，请替换为实际名字
+        MonoBehaviour[] scripts = player.GetComponents<MonoBehaviour>();
+        foreach (var script in scripts)
+        {
+            // 只要不是这个 LoopManager 和必要的组件，把玩家身上的脚本全关了
+            // 这样就没有任何代码能干扰玩家的坐标了
+            if (script.GetType().Name.Contains("Movement") || 
+                script.GetType().Name.Contains("Controller") ||
+                script.GetType().Name.Contains("Look")) 
+            {
+                script.enabled = false;
+            }
+        }
 
-            if (controller != null) controller.enabled = true;
-        }
-    }
+        // 3. 设置父子关系
+        player.transform.SetParent(car.transform);
+
+        // 4. 使用相对坐标对齐（Local Position）
+        // 这样玩家就永远固定在列车内部的相对位置
+        player.transform.localPosition = car.transform.InverseTransformPoint(playerSpawnPointend.position);
+        player.transform.localRotation = Quaternion.Inverse(car.transform.rotation) * playerSpawnPointend.rotation;
+        
+        Debug.Log("物理脚本已全灭，玩家已进入列车局部空间");
+    }
+}
 
     // 核心功能 1：触发下一个循环 (进入列车)
     public void StartNewLoop()
@@ -215,7 +235,7 @@ public class LoopManager : MonoBehaviour
             return;
         }
         currentLoopIndex++;
-        if (currentLoopIndex == 6)
+        if (currentLoopIndex ==1)
         {
             isTransitioning = true; // 关门
             TeleportPlayerToSpawnend();
@@ -314,12 +334,12 @@ public class LoopManager : MonoBehaviour
     {
         //管理黑夜关卡
         isDarkLoop = false;
-        //SetDarkLoop setDarkLoop = GameObject.Find("DarkLoop").GetComponent<SetDarkLoop>();
-        //setDarkLoop.InActiveAll();
+        SetDarkLoop setDarkLoop = GameObject.Find("DarkLoop").GetComponent<SetDarkLoop>();
+        setDarkLoop.InActiveAll();
         ResetPoster();
         Animator animator = strangeManInScene.GetComponent<Animator>();
         Transform parent = dynamicContentParent.transform;
-        //if (portal != null) portal.SetActive(false);
+        if (portal != null) portal.SetActive(false);
         // 默认显示1隐藏2
         bool showModel1 = true;
         bool showModel2 = false;
@@ -353,12 +373,12 @@ public class LoopManager : MonoBehaviour
         }
         if (currentLoopIndex == 1)
         {
+            currentEventID = 2;
+        }
+        if (currentLoopIndex == 2)
+        {
             currentEventID = 12;
         }
-        //if (currentLoopIndex == 2)
-        //{
-        //    currentEventID = 11;
-        //}
         if (currentLoopIndex == 5)
         {
             currentEventID = 8;
