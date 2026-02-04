@@ -57003,6 +57003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghost: {fileID: 134944740}
   sign: {fileID: 2123409270}
+  wall: {fileID: 1456228617}
 --- !u!114 &946022593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57049,6 +57050,7 @@ Transform:
   - {fileID: 800261858}
   - {fileID: 2123409271}
   - {fileID: 134944737}
+  - {fileID: 1456228618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &951036275 stripped
@@ -93008,11 +93010,11 @@ Transform:
   m_GameObject: {fileID: 1456228617}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.22, z: -2.74}
-  m_LocalScale: {x: 1.05, y: 0.78, z: 0.13}
+  m_LocalPosition: {x: -1.644252, y: -2.743228, z: -34.292213}
+  m_LocalScale: {x: 5.0135436, y: 5.2445345, z: 0.22798455}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1951428655}
+  m_Father: {fileID: 946022595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1456228619
 BoxCollider:
@@ -126385,8 +126387,7 @@ Transform:
   m_LocalPosition: {x: -1.692, y: 0.768, z: -29.487}
   m_LocalScale: {x: 4.7748036, y: 6.7237625, z: 1.7537273}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1456228618}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1951518926

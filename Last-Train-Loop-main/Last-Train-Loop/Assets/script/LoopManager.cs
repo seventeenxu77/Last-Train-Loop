@@ -235,7 +235,7 @@ void TeleportPlayerToSpawnend()
             return;
         }
         currentLoopIndex++;
-        if (currentLoopIndex ==1)
+        if (currentLoopIndex ==6)
         {
             isTransitioning = true; // 关门
             TeleportPlayerToSpawnend();
@@ -373,15 +373,15 @@ void TeleportPlayerToSpawnend()
         }
         if (currentLoopIndex == 1)
         {
-            currentEventID = 2;
+            currentEventID = 4;
         }
-        if (currentLoopIndex == 2)
+        if (currentLoopIndex == 3)
         {
-            currentEventID = 12;
+            currentEventID = 11;
         }
         if (currentLoopIndex == 5)
         {
-            currentEventID = 8;
+            currentEventID = 12;
         }
         Debug.Log($"循环次数 {currentLoopIndex}: 触发事件 ID {currentEventID}");
         switch (currentEventID)
