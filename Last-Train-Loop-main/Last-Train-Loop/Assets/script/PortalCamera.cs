@@ -29,7 +29,8 @@ public class PortalCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        if (playerCamera == null || portalEntrance == null || portalExit == null) return;
+        if (playerCamera == null || portalEntrance == null ||!portalExit) return;
+        if (Camera.main == null) return;
 
         // --- 1. 位置同步 ---
         // 计算玩家相对于入口门的本地位置
