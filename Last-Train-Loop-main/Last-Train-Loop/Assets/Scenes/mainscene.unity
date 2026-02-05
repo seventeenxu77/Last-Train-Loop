@@ -7855,6 +7855,8 @@ MonoBehaviour:
   caScript: {fileID: 946022594}
   anim: {fileID: 134944743}
   footstepAudio: {fileID: 783214567}
+  killDistance: 2.4
+  deathSceneName: dolldeath
 --- !u!95 &134944743 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -5644133064174452605, guid: 388bae1a0d25af243935890fd5135cac, type: 3}
@@ -49813,6 +49815,8 @@ MonoBehaviour:
   caScript: {fileID: 946022594}
   anim: {fileID: 0}
   footstepAudio: {fileID: 0}
+  killDistance: 1.5
+  deathSceneName: dolldeath
 --- !u!135 &800261860
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -87358,6 +87362,10 @@ PrefabInstance:
     - target: {fileID: 5112422530385423129, guid: f4401801543b8d04a9130ceac9da488b, type: 3}
       propertyPath: baseMoveSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112422530385423129, guid: f4401801543b8d04a9130ceac9da488b, type: 3}
+      propertyPath: deathSceneName
+      value: mouthdeath
       objectReference: {fileID: 0}
     - target: {fileID: 5112422530385423129, guid: f4401801543b8d04a9130ceac9da488b, type: 3}
       propertyPath: rotateWaitTime

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement; // [新增] 用于场景跳转
 
 public class GhostMove : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class GhostMove : MonoBehaviour
     public CameraSet caScript;
     public Animator anim;            
     public AudioSource footstepAudio; 
+
+    [Header("杀戮设置")] // [新增]
+    public float killDistance = 1.5f; // 触发死亡的距离
+    public string deathSceneName = "dolldeath"; // 对应你截图里的死亡场景名
 
     private GameObject player;
     private bool ableToMove, isCounting, showUp;
@@ -40,17 +45,48 @@ public class GhostMove : MonoBehaviour
             nextCheckTime = Time.time + (double)checkInterval;
         }
 
+        // 判断是否应该移动
         bool shouldMove = showUp && ableToMove && !isCounting;
 
         if (shouldMove)
         {
             Move();
             UpdateVisuals(true);
+            CheckKillPlayer(); // [新增] 移动时检查是否撞到玩家
         }
         else
         {
             UpdateVisuals(false);
         }
+    }
+
+    // [新增] 死亡检查逻辑
+void CheckKillPlayer()
+{
+    if (player == null || !showUp) return;
+
+    float dist = Vector3.Distance(transform.position, player.transform.position);
+    
+    // 运行阶段在控制台实时打印距离，看看你贴着它时，这个数字是多少
+    Debug.Log("当前距离怪物: " + dist); 
+
+    if (dist < killDistance)
+    {
+        ExecuteGameOver();
+    }
+}
+
+    // [新增] 执行游戏结束
+    void ExecuteGameOver()
+    {
+        showUp = false; // 停止怪物逻辑
+        
+        // 解锁鼠标
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        Debug.Log("<color=red>幽灵抓住了玩家！跳转场景...</color>");
+        SceneManager.LoadScene(deathSceneName);
     }
 
     void UpdateVisuals(bool isWalking)
@@ -98,7 +134,6 @@ public class GhostMove : MonoBehaviour
 
         float currentGroundY = ghostPos.y - yOffset;
         RaycastHit groundHit;
-        // 探测地面时排除怪物自己（包括子物体）
         if (Physics.Raycast(transform.position + Vector3.up * 1.5f, Vector3.down, out groundHit, 5.0f))
         {
             if (groundHit.transform != transform && !groundHit.transform.IsChildOf(transform))
@@ -124,33 +159,25 @@ public class GhostMove : MonoBehaviour
 
     void CheckIfInLight()
     {
-        // 1. 基础状态检查
         if (checkLight == null || caScript == null || !checkLight.enabled || caScript.isUsingMain) 
         {
             ableToMove = true;
             return;
         }
 
-        // 2. 计算方向和角度
-        // targetPoint 设在怪物中心稍微偏上的位置（胶囊体中间）
         Vector3 targetPoint = transform.position + Vector3.up * 1.2f; 
         Vector3 directionToGhost = (targetPoint - checkLight.transform.position).normalized;
         float angle = Vector3.Angle(checkLight.transform.forward, directionToGhost);
 
-        // 调试：蓝线显示手电筒和怪物之间的逻辑连线（只要蓝线出现了，说明角度判定正在工作）
         Debug.DrawLine(checkLight.transform.position, targetPoint, Color.blue, 0.1f);
 
-        // 3. 角度检查
         if (angle <= checkLight.spotAngle / 2f) 
         {
             RaycastHit hit;
-            // 4. 射线探测（这里不忽略 Trigger，以防你的子物体 Collider 误勾了 Trigger）
             if (Physics.Raycast(checkLight.transform.position, directionToGhost, out hit, checkLight.range))
             {
-                // 重点：检查射中的是否是父物体或任何子物体
                 if (hit.collider.gameObject == gameObject || hit.transform.IsChildOf(transform))
                 {
-                    // 调试：红线代表成功射中怪物
                     Debug.DrawLine(checkLight.transform.position, hit.point, Color.red, 0.1f);
 
                     if (ableToMove) 
@@ -163,7 +190,6 @@ public class GhostMove : MonoBehaviour
                 }
                 else
                 {
-                    // 调试：黄线代表射线射中了别的东西（被墙遮挡了）
                     Debug.DrawLine(checkLight.transform.position, hit.point, Color.yellow, 0.1f);
                 }
             }

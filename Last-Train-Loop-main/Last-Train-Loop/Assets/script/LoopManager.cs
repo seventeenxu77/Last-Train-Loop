@@ -235,7 +235,7 @@ void TeleportPlayerToSpawnend()
             return;
         }
         currentLoopIndex++;
-        if (currentLoopIndex ==1)
+        if (currentLoopIndex ==6)
         {
             isTransitioning = true; // 关门
             TeleportPlayerToSpawnend();
@@ -306,6 +306,15 @@ void TeleportPlayerToSpawnend()
         }
 
         Debug.Log("游戏结束文本已显示。");
+        // 5. 最后的等待与转场
+        yield return new WaitForSeconds(5.0f); // 让致谢名单停留一会儿
+        
+        // 释放鼠标，否则玩家回到主界面没法点按钮
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // 跳转回主菜单
+        UnityEngine.SceneManagement.SceneManager.LoadScene("end");
 
         // 5. 永久等待（或加载主菜单）
         // yield return new WaitForSeconds(10.0f); // 保持文本显示一段时间

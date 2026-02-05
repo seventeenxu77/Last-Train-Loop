@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement; // [新增] 用于场景跳转
 
 public class MouthMonster : MonoBehaviour
 {
@@ -13,29 +14,74 @@ public class MouthMonster : MonoBehaviour
     public Transform tongue; 
 
     [Header("速度设置")]
-    public float baseMoveSpeed = 2.0f;      // 基础速度
-    public float slowMoveSpeed = 0.8f;      // 摇头时的缓慢移动速度
-    public float burstSpeedMultiplier = 4.5f; // 突进倍率
+    public float baseMoveSpeed = 2.0f;      
+    public float slowMoveSpeed = 0.8f;      
+    public float burstSpeedMultiplier = 4.5f; 
 
     [Header("摇头与嘴巴设置")]
     public float shakeRange = 30f; 
     public float shakeSpeed = 10f; 
     public float maxOpenAngle = 45f; 
     public float tongueMaxLength = 2.5f; 
-    public float rotateWaitTime = 2.0f;    // 缓慢摇头移动的持续时间
+    public float rotateWaitTime = 2.0f;    
 
     [Header("路径点")]
     public List<Transform> waypoints;
 
+    [Header("杀戮设置")]
+    public float killDistance = 1.8f; // [新增] 触发死亡的距离
+    public string deathSceneName = "mouthdeath"; // [新增] 对应队友给你的视频跳转场景名
+
+    private GameObject player; // [新增] 玩家引用
     private bool isActivated = false;
     private int currentPointIndex = 0;
     private Quaternion baseRotation; 
 
-    void Start() => gameObject.SetActive(false);
+    void Start() 
+    {
+        // [新增] 自动通过标签寻找玩家
+        player = GameObject.FindGameObjectWithTag("Player");
+        gameObject.SetActive(false);
+    }
 
     void Update()
     {
-        if (isActivated) HandleVisuals();
+        if (isActivated) 
+        {
+            HandleVisuals();
+            CheckKillPlayer(); // [新增] 每帧检查是否抓到玩家
+        }
+    }
+
+    // [新增] 死亡检查逻辑
+    void CheckKillPlayer()
+    {
+        if (player == null) return;
+
+        // 计算水平面上的距离（防止玩家跳起导致距离变远射不死）
+        Vector3 monsterPos = new Vector3(transform.position.x, 0, transform.position.z);
+        Vector3 playerPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
+        float dist = Vector3.Distance(monsterPos, playerPos);
+
+        if (dist < killDistance)
+        {
+            ExecuteGameOver();
+        }
+    }
+
+    // [新增] 执行游戏结束
+    void ExecuteGameOver()
+    {
+        isActivated = false;
+        StopAllCoroutines(); // 停止移动
+
+        // 解锁鼠标，防止黑屏或视频时无法操作
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // 加载死亡视频场景
+        Debug.Log("<color=red>玩家被吃掉了！跳转场景...</color>");
+        SceneManager.LoadScene(deathSceneName);
     }
 
     void HandleVisuals()
@@ -46,37 +92,30 @@ public class MouthMonster : MonoBehaviour
         switch (currentState)
         {
             case MouthState.CrazyBite:
-                // 1. 蓄力快咬
                 mouthAngle = Mathf.Abs(Mathf.Sin(Time.time * 25f)) * maxOpenAngle;
                 targetTongueStretch = 0f; 
                 break;
 
             case MouthState.DashOpen:
-                // 2. 突进大张嘴
                 mouthAngle = maxOpenAngle + Mathf.Sin(Time.time * 40f) * 2f;
                 targetTongueStretch = 0f; 
                 break;
 
             case MouthState.ShakeHead:
-                // 3. 缓慢移动 + 摇头吐舌头
                 mouthAngle = maxOpenAngle; 
                 targetTongueStretch = tongueMaxLength; 
 
-                // 左右摇头逻辑
                 float yaw = Mathf.Sin(Time.time * shakeSpeed) * shakeRange;
                 float pitch = (Mathf.PerlinNoise(Time.time * 15f, 0) - 0.5f) * 10f;
                 float roll = (Mathf.PerlinNoise(0, Time.time * 15f) - 0.5f) * 10f;
                 
-                // 基于基准朝向叠加摇头角度
                 transform.localRotation = baseRotation * Quaternion.Euler(pitch, yaw, roll);
                 break;
         }
 
-        // 应用嘴巴旋转
         upperJaw.localRotation = Quaternion.Euler(-mouthAngle, 0, 0);
         lowerJaw.localRotation = Quaternion.Euler(mouthAngle, 0, 0);
 
-        // 应用舌头缩放与乱动
         if (tongue != null)
         {
             float currentScaleZ = Mathf.Lerp(tongue.localScale.z, targetTongueStretch, Time.deltaTime * 8f);
@@ -111,11 +150,9 @@ public class MouthMonster : MonoBehaviour
         {
             Transform target = waypoints[currentPointIndex];
 
-            // 第一阶段：蓄力快咬
             currentState = MouthState.CrazyBite;
             yield return new WaitForSeconds(0.7f);
 
-            // 第二阶段：高速突进
             currentState = MouthState.DashOpen;
             float dashSpeed = baseMoveSpeed * burstSpeedMultiplier;
             while (Vector3.Distance(transform.position, target.position) > 1.5f)
@@ -125,16 +162,13 @@ public class MouthMonster : MonoBehaviour
                 yield return null;
             }
 
-            // 第三阶段：缓慢摇头移动
             currentState = MouthState.ShakeHead;
             baseRotation = transform.rotation; 
             float timer = 0;
             while (timer < rotateWaitTime)
             {
-                // 向目标点缓慢推进
                 transform.position = Vector3.MoveTowards(transform.position, target.position, slowMoveSpeed * Time.deltaTime);
                 
-                // 实时更新基准朝向，确保摇头时整体方向不跑偏
                 Vector3 dir = (target.position - transform.position).normalized;
                 if (dir != Vector3.zero)
                 {
