@@ -235,7 +235,7 @@ void TeleportPlayerToSpawnend()
             return;
         }
         currentLoopIndex++;
-        if (currentLoopIndex ==6)
+        if (currentLoopIndex ==1)
         {
             isTransitioning = true; // 关门
             TeleportPlayerToSpawnend();
