@@ -2,67 +2,129 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("ÒÆ¶¯ÉèÖÃ")]
+    [Header("ç§»åŠ¨è®¾ç½®")]
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
 
-    [Header("Ïà»úĞı×ªÉèÖÃ")]
-    public Transform cameraTransform; // ÍÏÈë×ÓÎïÌå Main Camera
+    [Header("ç›¸æœºæ—‹è½¬è®¾ç½®")]
+    public Transform cameraTransform, handCameraTransform;
     public float mouseSensitivity = 200f;
     private float xRotation = 0f;
 
-    [Header("±ØÒª×é¼ş")]
-    public CharacterController controller; // ÍÏÈë×ÔÉíµÄ CharacterController
+    [Header("è§†è§’æ™ƒåŠ¨è®¾ç½®")]
+    public bool enableHeadBob = true;
+    public float bobAmplitude = 0.05f;
+    public float bobFrequency = 10.0f;
+    private float defaultCameraY;
+    private float bobTimer = 0f;
 
-    private Vector3 velocity; // ÓÃÓÚ´¦ÀíÖØÁ¦ºÍÌøÔ¾µÄËÙ¶È
-    private bool isGrounded;  // ÊÇ·ñÔÚµØÃæÉÏ
+    [Header("éŸ³é¢‘è®¾ç½®")]
+    public AudioSource footstepSource; 
+
+    [Header("å¿…è¦ç»„ä»¶")]
+    public CharacterController controller;
+
+    private Vector3 velocity;
+    private bool isGrounded;
 
     void Start()
     {
-        // ÓÎÏ·¿ªÊ¼Ê±Òş²Ø²¢Ëø¶¨Êó±ê£¬·ÀÖ¹Êó±ê»¬³ö´°¿Ú
         Cursor.lockState = CursorLockMode.Locked;
+        if (cameraTransform != null)
+        {
+            defaultCameraY = cameraTransform.localPosition.y;
+        }
     }
 
     void Update()
     {
-        // 1. ¼ì²âÊÇ·ñÔÚµØÃæÉÏ
+        // ã€æ ¸å¿ƒä¿®å¤ã€‘ï¼šå¦‚æœæ§åˆ¶å™¨æœªæ¿€æ´»ï¼Œç›´æ¥è·³è¿‡æœ¬å¸§ï¼Œä¸æ‰§è¡Œä»»ä½•ç§»åŠ¨é€»è¾‘
+        if (controller == null || !controller.enabled) 
+        {
+            // å¦‚æœæ§åˆ¶å™¨å…³äº†ï¼Œå£°éŸ³ä¹Ÿå¾—å…³æ‰ï¼Œé˜²æ­¢åŸåœ°è¸æ­¥å£°
+            if (footstepSource != null && footstepSource.isPlaying) footstepSource.Stop();
+            return; 
+        }
+
+        // 1. åœ°é¢æ£€æµ‹
         isGrounded = controller.isGrounded;
         if (isGrounded && velocity.y < 0)
         {
-            // ÔÚµØÃæÊ±ÖØÖÃÏÂÂäËÙ¶È£¨ÉèÖÃÒ»¸öĞ¡µÄ¸ºÖµÈ·±£½ÇÉ«ÌùµØ£©
             velocity.y = -2f;
         }
 
-        // 2. ´¦ÀíÊÓ½ÇĞı×ª (Êó±ê)
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // 2. è§†è§’æ—‹è½¬ (è§†è§’æ—‹è½¬é€šå¸¸ä¸éœ€è¦ä¾èµ– CC æ¿€æ´»ï¼Œä½†æ”¾åœ¨è¿™é‡Œæ›´å®‰å…¨)
+        RotateCamera();
 
-        // ×óÓÒĞı×ª£ºĞı×ªÕû¸öÍæ¼ÒÉíÌå
-        transform.Rotate(Vector3.up * mouseX);
-
-        // ÉÏÏÂĞı×ª£ºÖ»Ğı×ªÏà»ú£¬²¢ÏŞÖÆÊÓ½ÇÔÚ -90 µ½ 90 ¶ÈÖ®¼ä
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
-        // 3. ´¦ÀíË®Æ½ÒÆ¶¯ (WASD)
+        // 3. ç§»åŠ¨è¾“å…¥
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        // ¸ù¾İÍæ¼Òµ±Ç°ÃæÏòµÄ·½ÏòÀ´¼ÆËãÒÆ¶¯ÏòÁ¿
         Vector3 move = transform.right * x + transform.forward * z;
+        
+        // æ‰§è¡Œæ°´å¹³ç§»åŠ¨
         controller.Move(move * moveSpeed * Time.deltaTime);
 
-        // 4. ´¦ÀíÌøÔ¾
+        // æ•ˆæœç±»é€»è¾‘
+        HandleHeadBob(x, z);
+        HandleFootstepAudio(x, z);
+
+        // 4. è·³è·ƒ
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            // ÌøÔ¾ÎïÀí¹«Ê½£ºv = sqrt(h * -2 * g)
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        // 5. Ó¦ÓÃÖØÁ¦
+        // 5. é‡åŠ›ä¸å‚ç›´ç§»åŠ¨
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void RotateCamera()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        transform.Rotate(Vector3.up * mouseX);
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        if(handCameraTransform != null)
+            handCameraTransform.localRotation = cameraTransform.localRotation;
+    }
+
+    void HandleHeadBob(float inputX, float inputZ)
+    {
+        if (!enableHeadBob || cameraTransform == null) return;
+
+        if (isGrounded && (Mathf.Abs(inputX) > 0.1f || Mathf.Abs(inputZ) > 0.1f))
+        {
+            bobTimer += Time.deltaTime * bobFrequency;
+            float newY = defaultCameraY + Mathf.Sin(bobTimer) * bobAmplitude;
+            cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, newY, cameraTransform.localPosition.z);
+        }
+        else
+        {
+            bobTimer = 0;
+            float newY = Mathf.Lerp(cameraTransform.localPosition.y, defaultCameraY, Time.deltaTime * 10f);
+            cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, newY, cameraTransform.localPosition.z);
+        }
+    }
+
+    void HandleFootstepAudio(float inputX, float inputZ)
+    {
+        if (footstepSource == null) return;
+        bool isMoving = Mathf.Abs(inputX) > 0.1f || Mathf.Abs(inputZ) > 0.1f;
+
+        if (isGrounded && isMoving)
+        {
+            if (!footstepSource.isPlaying) footstepSource.Play();
+        }
+        else
+        {
+            if (footstepSource.isPlaying) footstepSource.Stop();
+        }
     }
 }

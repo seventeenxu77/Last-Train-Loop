@@ -2,14 +2,25 @@ using UnityEngine;
 
 public class StairsTrigger : MonoBehaviour
 {
+    public bool toOrigin = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("½øÈëÁĞ³µ£¬´¥·¢ÏÂÒ»Ñ­»·¡£");
-
-            if (LoopManager.Instance.has_exception) LoopManager.Instance.StartNewLoop();
-            else LoopManager.Instance.ResetLoop();
+            if (!LoopManager.Instance.isDarkLoop)
+            { 
+                toOrigin = false;
+                Debug.Log("ä¸‹æ¥¼ï¼Œè§¦å‘ä¸‹ä¸€å¾ªç¯ã€‚");
+                if (LoopManager.Instance.has_exception) { LoopManager.Instance.StartNewLoop(); Debug.Log("è°ƒç”¨StairsTriggerçš„startNew"); }
+                else LoopManager.Instance.ResetLoop();
+            }
+            else
+            {
+                toOrigin = true;
+                Debug.Log("é»‘å¤œå…³å¡ï¼Œéœ€è¦å›åˆ°èµ·ç‚¹");
+            }
+            
         }
+
     }
 }
