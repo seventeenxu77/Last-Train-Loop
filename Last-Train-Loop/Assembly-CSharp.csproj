@@ -64,7 +64,6 @@
     <Compile Include="Assets\script\dayuntrigger.cs" />
     <Compile Include="Assets\script\SetDarkLoop.cs" />
     <Compile Include="Assets\script\LoopManager.cs" />
-    <Compile Include="Assets\script\hint_normal.cs" />
     <Compile Include="Assets\script\AudioTrigger.cs" />
     <Compile Include="Assets\script\UItext.cs" />
     <Compile Include="Assets\script\GhostMove.cs" />
@@ -87,7 +86,6 @@
     <Compile Include="Assets\Resources\Home\Scripts\HoverSwitch2D.cs" />
     <Compile Include="Assets\script\OpenDoor.cs" />
     <Compile Include="Assets\script\MonsterTrigger.cs" />
-    <Compile Include="Assets\script\subwayrun.cs" />
     <Compile Include="Assets\script\manmanout.cs" />
   </ItemGroup>
   <ItemGroup>

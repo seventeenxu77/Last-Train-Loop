@@ -14,8 +14,8 @@ public class GhostMove : MonoBehaviour
     [Header("组件引用")]
     public Light checkLight;
     public CameraSet caScript;
-    public Animator anim;            
-    public AudioSource footstepAudio; 
+    public Animator anim;
+    public AudioSource footstepAudio;
 
     [Header("杀戮设置")] // [新增]
     public float killDistance = 1.5f; // 触发死亡的距离
@@ -24,7 +24,7 @@ public class GhostMove : MonoBehaviour
     private GameObject player;
     private bool ableToMove, isCounting, showUp;
     private double nextCheckTime = 0;
-    private float checkInterval = 0.1f; 
+    private float checkInterval = 0.1f;
     private Coroutine cor;
 
     void Start()
@@ -33,7 +33,7 @@ public class GhostMove : MonoBehaviour
         ableToMove = true;
         isCounting = false;
         showUp = false;
-        
+
         if (footstepAudio != null) footstepAudio.Stop();
     }
 
@@ -61,31 +61,34 @@ public class GhostMove : MonoBehaviour
     }
 
     // [新增] 死亡检查逻辑
-void CheckKillPlayer()
-{
-    if (player == null || !showUp) return;
-
-    float dist = Vector3.Distance(transform.position, player.transform.position);
-    
-    // 运行阶段在控制台实时打印距离，看看你贴着它时，这个数字是多少
-    Debug.Log("当前距离怪物: " + dist); 
-
-    if (dist < killDistance)
+    void CheckKillPlayer()
     {
-        ExecuteGameOver();
+        if (player == null || !showUp) return;
+
+        float dist = Vector3.Distance(transform.position, player.transform.position);
+
+        // 运行阶段在控制台实时打印距离，看看你贴着它时，这个数字是多少
+        Debug.Log("当前距离怪物: " + dist);
+
+        if (dist < killDistance)
+        {
+            ExecuteGameOver();
+        }
     }
-}
 
     // [新增] 执行游戏结束
     void ExecuteGameOver()
     {
         showUp = false; // 停止怪物逻辑
-        
+
         // 解锁鼠标
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
         Debug.Log("<color=red>幽灵抓住了玩家！跳转场景...</color>");
+        if (LoopManager.Instance != null)
+        {
+            Destroy(LoopManager.Instance.gameObject);
+        }
         SceneManager.LoadScene(deathSceneName);
     }
 
@@ -152,26 +155,26 @@ void CheckKillPlayer()
     void LookAtPlayerHorizontal()
     {
         Vector3 dir = (player.transform.position - transform.position).normalized;
-        dir.y = 0; 
+        dir.y = 0;
         if (dir != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(dir);
     }
 
     void CheckIfInLight()
     {
-        if (checkLight == null || caScript == null || !checkLight.enabled || caScript.isUsingMain) 
+        if (checkLight == null || caScript == null || !checkLight.enabled || caScript.isUsingMain)
         {
             ableToMove = true;
             return;
         }
 
-        Vector3 targetPoint = transform.position + Vector3.up * 1.2f; 
+        Vector3 targetPoint = transform.position + Vector3.up * 1.2f;
         Vector3 directionToGhost = (targetPoint - checkLight.transform.position).normalized;
         float angle = Vector3.Angle(checkLight.transform.forward, directionToGhost);
 
         Debug.DrawLine(checkLight.transform.position, targetPoint, Color.blue, 0.1f);
 
-        if (angle <= checkLight.spotAngle / 2f) 
+        if (angle <= checkLight.spotAngle / 2f)
         {
             RaycastHit hit;
             if (Physics.Raycast(checkLight.transform.position, directionToGhost, out hit, checkLight.range))
@@ -180,13 +183,13 @@ void CheckKillPlayer()
                 {
                     Debug.DrawLine(checkLight.transform.position, hit.point, Color.red, 0.1f);
 
-                    if (ableToMove) 
+                    if (ableToMove)
                     {
                         ableToMove = false;
                         if (cor != null) StopCoroutine(cor);
                         cor = StartCoroutine(CountDown());
                     }
-                    return; 
+                    return;
                 }
                 else
                 {
@@ -194,7 +197,7 @@ void CheckKillPlayer()
                 }
             }
         }
-        
+
         ableToMove = true;
     }
 
