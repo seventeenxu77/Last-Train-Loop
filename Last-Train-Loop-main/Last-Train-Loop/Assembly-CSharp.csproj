@@ -77,6 +77,7 @@
     <Compile Include="Assets\script\LightManager.cs" />
     <Compile Include="Assets\script\DarkLoopTextTrigger.cs" />
     <Compile Include="Assets\script\guangbo.cs" />
+    <Compile Include="Assets\script\Skipper.cs" />
     <Compile Include="Assets\script\subwayrun(1).cs" />
     <Compile Include="Assets\script\PortalCamera.cs" />
     <Compile Include="Assets\script\MouthMonster.cs" />
@@ -90,7 +91,6 @@
     <Compile Include="Assets\Resources\Home\Scripts\HoverSwitch2D.cs" />
     <Compile Include="Assets\script\OpenDoor.cs" />
     <Compile Include="Assets\script\MonsterTrigger.cs" />
-    <Compile Include="Assets\script\AddmeshCollider.cs" />
     <Compile Include="Assets\script\manmanout.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,21 +9,21 @@ public class MouthMonster : MonoBehaviour
     private MouthState currentState = MouthState.Idle;
 
     [Header("模型结构引用")]
-    public Transform upperJaw; 
-    public Transform lowerJaw; 
-    public Transform tongue; 
+    public Transform upperJaw;
+    public Transform lowerJaw;
+    public Transform tongue;
 
     [Header("速度设置")]
-    public float baseMoveSpeed = 2.0f;      
-    public float slowMoveSpeed = 0.8f;      
-    public float burstSpeedMultiplier = 4.5f; 
+    public float baseMoveSpeed = 2.0f;
+    public float slowMoveSpeed = 0.8f;
+    public float burstSpeedMultiplier = 4.5f;
 
     [Header("摇头与嘴巴设置")]
-    public float shakeRange = 30f; 
-    public float shakeSpeed = 10f; 
-    public float maxOpenAngle = 45f; 
-    public float tongueMaxLength = 2.5f; 
-    public float rotateWaitTime = 2.0f;    
+    public float shakeRange = 30f;
+    public float shakeSpeed = 10f;
+    public float maxOpenAngle = 45f;
+    public float tongueMaxLength = 2.5f;
+    public float rotateWaitTime = 2.0f;
 
     [Header("路径点")]
     public List<Transform> waypoints;
@@ -35,9 +35,9 @@ public class MouthMonster : MonoBehaviour
     private GameObject player; // [新增] 玩家引用
     private bool isActivated = false;
     private int currentPointIndex = 0;
-    private Quaternion baseRotation; 
+    private Quaternion baseRotation;
 
-    void Start() 
+    void Start()
     {
         // [新增] 自动通过标签寻找玩家
         player = GameObject.FindGameObjectWithTag("Player");
@@ -46,7 +46,7 @@ public class MouthMonster : MonoBehaviour
 
     void Update()
     {
-        if (isActivated) 
+        if (isActivated)
         {
             HandleVisuals();
             CheckKillPlayer(); // [新增] 每帧检查是否抓到玩家
@@ -78,37 +78,40 @@ public class MouthMonster : MonoBehaviour
         // 解锁鼠标，防止黑屏或视频时无法操作
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
         // 加载死亡视频场景
         Debug.Log("<color=red>玩家被吃掉了！跳转场景...</color>");
+        if (LoopManager.Instance != null)
+        {
+            Destroy(LoopManager.Instance.gameObject);
+        }
         SceneManager.LoadScene(deathSceneName);
     }
 
     void HandleVisuals()
     {
         float mouthAngle = 0;
-        float targetTongueStretch = 0f; 
-        
+        float targetTongueStretch = 0f;
+
         switch (currentState)
         {
             case MouthState.CrazyBite:
                 mouthAngle = Mathf.Abs(Mathf.Sin(Time.time * 25f)) * maxOpenAngle;
-                targetTongueStretch = 0f; 
+                targetTongueStretch = 0f;
                 break;
 
             case MouthState.DashOpen:
                 mouthAngle = maxOpenAngle + Mathf.Sin(Time.time * 40f) * 2f;
-                targetTongueStretch = 0f; 
+                targetTongueStretch = 0f;
                 break;
 
             case MouthState.ShakeHead:
-                mouthAngle = maxOpenAngle; 
-                targetTongueStretch = tongueMaxLength; 
+                mouthAngle = maxOpenAngle;
+                targetTongueStretch = tongueMaxLength;
 
                 float yaw = Mathf.Sin(Time.time * shakeSpeed) * shakeRange;
                 float pitch = (Mathf.PerlinNoise(Time.time * 15f, 0) - 0.5f) * 10f;
                 float roll = (Mathf.PerlinNoise(0, Time.time * 15f) - 0.5f) * 10f;
-                
+
                 transform.localRotation = baseRotation * Quaternion.Euler(pitch, yaw, roll);
                 break;
         }
@@ -163,12 +166,12 @@ public class MouthMonster : MonoBehaviour
             }
 
             currentState = MouthState.ShakeHead;
-            baseRotation = transform.rotation; 
+            baseRotation = transform.rotation;
             float timer = 0;
             while (timer < rotateWaitTime)
             {
                 transform.position = Vector3.MoveTowards(transform.position, target.position, slowMoveSpeed * Time.deltaTime);
-                
+
                 Vector3 dir = (target.position - transform.position).normalized;
                 if (dir != Vector3.zero)
                 {
@@ -181,7 +184,7 @@ public class MouthMonster : MonoBehaviour
 
             currentPointIndex++;
         }
-        
+
         gameObject.SetActive(false);
     }
 

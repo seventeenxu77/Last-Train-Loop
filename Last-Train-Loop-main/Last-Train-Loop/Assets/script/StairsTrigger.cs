@@ -3,6 +3,9 @@ using UnityEngine;
 public class StairsTrigger : MonoBehaviour
 {
     public bool toOrigin = false;
+    [Header("物体引用")]
+    public GameObject ghost;
+    public GameObject wall;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,6 +20,8 @@ public class StairsTrigger : MonoBehaviour
             else
             {
                 toOrigin = true;
+                wall.SetActive(true);
+                ghost.GetComponent<GhostMove>().Summon();
                 Debug.Log("黑夜关卡，需要回到起点");
             }
             

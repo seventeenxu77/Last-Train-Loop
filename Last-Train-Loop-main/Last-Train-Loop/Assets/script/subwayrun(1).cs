@@ -27,7 +27,7 @@ public class Subwayrun : MonoBehaviour
         Invoke(nameof(StartMoving), delayBeforeMove);
     }
 
-    void StartMoving()
+    public void StartMoving()
     {
         StartCoroutine(MoveTrain());
     }

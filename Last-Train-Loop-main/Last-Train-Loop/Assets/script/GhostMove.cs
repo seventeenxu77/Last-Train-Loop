@@ -14,17 +14,17 @@ public class GhostMove : MonoBehaviour
     [Header("组件引用")]
     public Light checkLight;
     public CameraSet caScript;
-    public Animator anim;            
-    public AudioSource footstepAudio; 
+    public Animator anim;
+    public AudioSource footstepAudio;
 
     [Header("杀戮设置")] // [新增]
-    public float killDistance = 1.5f; // 触发死亡的距离
+    public float killDistance = 0.5f; // 触发死亡的距离
     public string deathSceneName = "dolldeath"; // 对应你截图里的死亡场景名
 
     private GameObject player;
     private bool ableToMove, isCounting, showUp;
     private double nextCheckTime = 0;
-    private float checkInterval = 0.1f; 
+    private float checkInterval = 0.1f;
     private Coroutine cor;
 
     void Start()
@@ -33,7 +33,7 @@ public class GhostMove : MonoBehaviour
         ableToMove = true;
         isCounting = false;
         showUp = false;
-        
+
         if (footstepAudio != null) footstepAudio.Stop();
     }
 
@@ -61,49 +61,69 @@ public class GhostMove : MonoBehaviour
     }
 
     // [新增] 死亡检查逻辑
-void CheckKillPlayer()
-{
-    if (player == null || !showUp) return;
-
-    float dist = Vector3.Distance(transform.position, player.transform.position);
-    
-    // 运行阶段在控制台实时打印距离，看看你贴着它时，这个数字是多少
-    Debug.Log("当前距离怪物: " + dist); 
-
-    if (dist < killDistance)
+    void CheckKillPlayer()
     {
-        ExecuteGameOver();
+        if (player == null || !showUp) return;
+
+        float dist = Vector3.Distance(transform.position, player.transform.position);
+
+        // 运行阶段在控制台实时打印距离，看看你贴着它时，这个数字是多少
+        Debug.Log("当前距离怪物: " + dist);
+
+        if (dist < killDistance)
+        {
+            ExecuteGameOver();
+        }
     }
-}
 
     // [新增] 执行游戏结束
     void ExecuteGameOver()
     {
         showUp = false; // 停止怪物逻辑
-        
+
         // 解锁鼠标
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
         Debug.Log("<color=red>幽灵抓住了玩家！跳转场景...</color>");
+        if (LoopManager.Instance != null)
+        {
+            Destroy(LoopManager.Instance.gameObject);
+        }
         SceneManager.LoadScene(deathSceneName);
     }
 
-    void UpdateVisuals(bool isWalking)
+void UpdateVisuals(bool isWalking)
+{
+    if (anim != null)
     {
-        if (anim != null)
+        if (isWalking)
         {
-            anim.speed = isWalking ? 1.0f : 0.0f;
+            anim.speed = 3.0f; // 没被看到时，动画快放
         }
-
-        if (footstepAudio != null)
+        else
         {
-            if (isWalking && !footstepAudio.isPlaying)
-                footstepAudio.Play();
-            else if (!isWalking && footstepAudio.isPlaying)
-                footstepAudio.Pause();
+            // 当刚被发现而停下时
+            if (anim.speed > 0.1f) 
+            {
+                // 核心：瞬间切换到一个随机姿势定格
+                anim.Play(anim.GetCurrentAnimatorStateInfo(0).fullPathHash, 0, Random.value);
+            }
+            // 微动感：给一个极小的速度，让它看起来像是在极慢地呼吸或颤抖
+            anim.speed = 0.02f; 
         }
     }
+
+    if (footstepAudio != null)
+    {
+        // 既然速度变快了，声音的音调(Pitch)也要调高才有急促感
+        footstepAudio.pitch = isWalking ? 1.5f : 1.0f; 
+        
+        if (isWalking && !footstepAudio.isPlaying)
+            footstepAudio.Play();
+        else if (!isWalking && footstepAudio.isPlaying)
+            footstepAudio.Pause();
+    }
+}
 
     public void Summon()
     {
@@ -152,26 +172,26 @@ void CheckKillPlayer()
     void LookAtPlayerHorizontal()
     {
         Vector3 dir = (player.transform.position - transform.position).normalized;
-        dir.y = 0; 
+        dir.y = 0;
         if (dir != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(dir);
     }
 
     void CheckIfInLight()
     {
-        if (checkLight == null || caScript == null || !checkLight.enabled || caScript.isUsingMain) 
+        if (checkLight == null || caScript == null || !checkLight.enabled || caScript.isUsingMain)
         {
             ableToMove = true;
             return;
         }
 
-        Vector3 targetPoint = transform.position + Vector3.up * 1.2f; 
+        Vector3 targetPoint = transform.position + Vector3.up * 1.2f;
         Vector3 directionToGhost = (targetPoint - checkLight.transform.position).normalized;
         float angle = Vector3.Angle(checkLight.transform.forward, directionToGhost);
 
         Debug.DrawLine(checkLight.transform.position, targetPoint, Color.blue, 0.1f);
 
-        if (angle <= checkLight.spotAngle / 2f) 
+        if (angle <= checkLight.spotAngle / 2f)
         {
             RaycastHit hit;
             if (Physics.Raycast(checkLight.transform.position, directionToGhost, out hit, checkLight.range))
@@ -180,13 +200,13 @@ void CheckKillPlayer()
                 {
                     Debug.DrawLine(checkLight.transform.position, hit.point, Color.red, 0.1f);
 
-                    if (ableToMove) 
+                    if (ableToMove)
                     {
                         ableToMove = false;
                         if (cor != null) StopCoroutine(cor);
                         cor = StartCoroutine(CountDown());
                     }
-                    return; 
+                    return;
                 }
                 else
                 {
@@ -194,7 +214,7 @@ void CheckKillPlayer()
                 }
             }
         }
-        
+
         ableToMove = true;
     }
 
