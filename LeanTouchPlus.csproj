@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EA143E00-2848-23A5-F988-3ED0EA39A812}</ProjectGuid>
+    <ProjectGuid>{305341ED-A08E-CE31-5541-05866DE2ED75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>LeanTouchPlus</AssemblyName>
@@ -1023,19 +1023,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="LeanCommon.csproj">
-      <Project>{3EB5B48E-07FA-0B88-9D0D-E2DB56EBAA23}</Project>
+      <Project>{DD63AB67-68C5-A068-DDDD-BF6D11EDFFDD}</Project>
       <Name>LeanCommon</Name>
     </ProjectReference>
     <ProjectReference Include="LeanTouch.csproj">
-      <Project>{AF3C75A6-1A07-EA74-8A99-2AFA73ABFE93}</Project>
+      <Project>{32189849-9129-70C7-2140-02E6CA109D23}</Project>
       <Name>LeanTouch</Name>
     </ProjectReference>
     <ProjectReference Include="LeanCommonPlus.csproj">
-      <Project>{1208BD47-F64A-79C9-6D6A-7D5C29B7948A}</Project>
+      <Project>{C0692825-67A3-EB9C-DC0E-79395A19E6D5}</Project>
       <Name>LeanCommonPlus</Name>
     </ProjectReference>
     <ProjectReference Include="CW.Common.csproj">
-      <Project>{EC6A80C2-272A-E1FD-B074-35A1348EA04C}</Project>
+      <Project>{DF6594F2-AE46-636C-E0DF-9584C967B03A}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{743A3257-8101-B8D8-4858-ACF855F9CF78}</ProjectGuid>
+    <ProjectGuid>{10EDFEED-3FAA-D8B5-F12F-CAED132E45ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PaintCore</AssemblyName>
@@ -1079,7 +1079,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CW.Common.csproj">
-      <Project>{EC6A80C2-272A-E1FD-B074-35A1348EA04C}</Project>
+      <Project>{DF6594F2-AE46-636C-E0DF-9584C967B03A}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
   </ItemGroup>

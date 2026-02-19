@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{67B4D011-87EA-6966-98FF-22205702B95B}</ProjectGuid>
+    <ProjectGuid>{86F97120-2F29-A28B-3479-B3791E79193A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PaintIn3D</AssemblyName>
@@ -1023,11 +1023,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CW.Common.csproj">
-      <Project>{EC6A80C2-272A-E1FD-B074-35A1348EA04C}</Project>
+      <Project>{DF6594F2-AE46-636C-E0DF-9584C967B03A}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
     <ProjectReference Include="PaintCore.csproj">
-      <Project>{743A3257-8101-B8D8-4858-ACF855F9CF78}</Project>
+      <Project>{10EDFEED-3FAA-D8B5-F12F-CAED132E45ED}</Project>
       <Name>PaintCore</Name>
     </ProjectReference>
   </ItemGroup>

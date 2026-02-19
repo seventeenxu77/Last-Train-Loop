@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4148AED2-58CB-01F6-A7F3-728385263ECB}</ProjectGuid>
+    <ProjectGuid>{658B944D-ABC1-8B24-831C-670011F4D40D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -73,6 +73,7 @@
     <Compile Include="Assets\script\LightManager.cs" />
     <Compile Include="Assets\script\DarkLoopTextTrigger.cs" />
     <Compile Include="Assets\script\guangbo.cs" />
+    <Compile Include="Assets\script\Skipper.cs" />
     <Compile Include="Assets\script\subwayrun(1).cs" />
     <Compile Include="Assets\script\PortalCamera.cs" />
     <Compile Include="Assets\script\MouthMonster.cs" />
@@ -1139,47 +1140,47 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{3C38D0F9-6B51-00F0-3EE7-B0B0944FDA06}</Project>
+      <Project>{26D5DB33-460B-200E-D46B-04EC2026B03B}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="LeanTouch.csproj">
-      <Project>{AF3C75A6-1A07-EA74-8A99-2AFA73ABFE93}</Project>
+      <Project>{32189849-9129-70C7-2140-02E6CA109D23}</Project>
       <Name>LeanTouch</Name>
     </ProjectReference>
     <ProjectReference Include="LeanTouchPlus.csproj">
-      <Project>{EA143E00-2848-23A5-F988-3ED0EA39A812}</Project>
+      <Project>{305341ED-A08E-CE31-5541-05866DE2ED75}</Project>
       <Name>LeanTouchPlus</Name>
     </ProjectReference>
     <ProjectReference Include="ParadoxNotion.csproj">
-      <Project>{95E34F5C-7E71-0C63-620F-5C9C0D83FFA8}</Project>
+      <Project>{DA8383BB-F0FC-39E8-E580-AE1514E9FEA9}</Project>
       <Name>ParadoxNotion</Name>
     </ProjectReference>
     <ProjectReference Include="CW.ShaderBundle.csproj">
-      <Project>{6EE8FE8C-31B6-A097-3311-3B3AD548AD21}</Project>
+      <Project>{CC79C4E9-1CBC-9655-5D62-B2A15754B437}</Project>
       <Name>CW.ShaderBundle</Name>
     </ProjectReference>
     <ProjectReference Include="PaintCore.csproj">
-      <Project>{743A3257-8101-B8D8-4858-ACF855F9CF78}</Project>
+      <Project>{10EDFEED-3FAA-D8B5-F12F-CAED132E45ED}</Project>
       <Name>PaintCore</Name>
     </ProjectReference>
     <ProjectReference Include="NodeCanvas.csproj">
-      <Project>{5A76825C-69AF-CAE8-1327-1325C5E78E52}</Project>
+      <Project>{6199FECD-CEF1-61E4-7202-036EA3E74CBE}</Project>
       <Name>NodeCanvas</Name>
     </ProjectReference>
     <ProjectReference Include="LeanCommonPlus.csproj">
-      <Project>{1208BD47-F64A-79C9-6D6A-7D5C29B7948A}</Project>
+      <Project>{C0692825-67A3-EB9C-DC0E-79395A19E6D5}</Project>
       <Name>LeanCommonPlus</Name>
     </ProjectReference>
     <ProjectReference Include="PaintIn3D.csproj">
-      <Project>{67B4D011-87EA-6966-98FF-22205702B95B}</Project>
+      <Project>{86F97120-2F29-A28B-3479-B3791E79193A}</Project>
       <Name>PaintIn3D</Name>
     </ProjectReference>
     <ProjectReference Include="CW.Common.csproj">
-      <Project>{EC6A80C2-272A-E1FD-B074-35A1348EA04C}</Project>
+      <Project>{DF6594F2-AE46-636C-E0DF-9584C967B03A}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
     <ProjectReference Include="LeanCommon.csproj">
-      <Project>{3EB5B48E-07FA-0B88-9D0D-E2DB56EBAA23}</Project>
+      <Project>{DD63AB67-68C5-A068-DDDD-BF6D11EDFFDD}</Project>
       <Name>LeanCommon</Name>
     </ProjectReference>
   </ItemGroup>

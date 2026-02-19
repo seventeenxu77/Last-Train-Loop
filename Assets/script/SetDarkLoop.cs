@@ -16,10 +16,7 @@ public class SetDarkLoop : MonoBehaviour
     public void ActiveAll()
     {
         if(ghost.active == true) ghost.transform.position = ghost.GetComponent<GhostMove>().ghostBornPlace;
-        ghost.SetActive(true);
         sign.SetActive(true);
-        wall.SetActive(true);
-        ghost.GetComponent<GhostMove>().Summon();
         transform.GetComponent<LightManager>().TurnOffAllLights();
         Debug.Log("执行ActiveAll");
     }

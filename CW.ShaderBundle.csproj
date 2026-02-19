@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6EE8FE8C-31B6-A097-3311-3B3AD548AD21}</ProjectGuid>
+    <ProjectGuid>{CC79C4E9-1CBC-9655-5D62-B2A15754B437}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>CW.ShaderBundle</AssemblyName>
@@ -973,7 +973,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CW.Common.csproj">
-      <Project>{EC6A80C2-272A-E1FD-B074-35A1348EA04C}</Project>
+      <Project>{DF6594F2-AE46-636C-E0DF-9584C967B03A}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
   </ItemGroup>

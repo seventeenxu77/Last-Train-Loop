@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5A76825C-69AF-CAE8-1327-1325C5E78E52}</ProjectGuid>
+    <ProjectGuid>{6199FECD-CEF1-61E4-7202-036EA3E74CBE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>NodeCanvas</AssemblyName>
@@ -1248,7 +1248,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="ParadoxNotion.csproj">
-      <Project>{95E34F5C-7E71-0C63-620F-5C9C0D83FFA8}</Project>
+      <Project>{DA8383BB-F0FC-39E8-E580-AE1514E9FEA9}</Project>
       <Name>ParadoxNotion</Name>
     </ProjectReference>
   </ItemGroup>

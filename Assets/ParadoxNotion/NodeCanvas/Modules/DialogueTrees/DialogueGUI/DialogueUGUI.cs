@@ -171,7 +171,7 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
                 {
                     StartCoroutine(CheckInput(() => { inputDown = true; }));
                 }
-
+                waitInputIndicator.gameObject.SetActive(true);
                 for (int i = 0; i < text.Length; i++)
                 {
 
@@ -214,11 +214,18 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
             if (waitForInput)
             {
                 waitInputIndicator.gameObject.SetActive(true);
-                //while (!Input.GetKeyDown(KeyCode.Escape))
-                //{
-                //    yield return null;
-                //}
-                yield return new WaitForSecondsRealtime(1.5f);
+                float timer = 0f;
+                float maxWaitTime = 1.5f;
+
+                while (timer < maxWaitTime)
+                {
+                    if (Input.GetKeyDown(KeyCode.C))
+                    {
+                        break; // 跳过等待
+                    }
+                    timer += Time.deltaTime;
+                    yield return null;
+                }
                 waitInputIndicator.gameObject.SetActive(false);
             }
 
