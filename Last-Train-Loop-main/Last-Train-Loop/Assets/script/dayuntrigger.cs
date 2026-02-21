@@ -16,4 +16,9 @@ public class dayuntrigger : MonoBehaviour
             Debug.Log("火车序列已启动...");
         }
     }
+    public void ResetTrigger()
+{
+    triggered = false;
+    Debug.Log("列车触发器已重置。");
+}
 }

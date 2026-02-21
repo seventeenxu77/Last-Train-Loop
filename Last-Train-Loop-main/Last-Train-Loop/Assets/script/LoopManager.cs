@@ -337,6 +337,22 @@ public class LoopManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+// 1. 重置大嘴怪 (之前已经改过)
+    MouthMonster mouth = Object.FindFirstObjectByType<MouthMonster>();
+    if (mouth != null) mouth.ResetMonster();
+
+    // 2. 重置大运号列车
+    dayunontroller train = Object.FindFirstObjectByType<dayunontroller>();
+    if (train != null) train.ResetTrain();
+
+    // 3. 重置所有的触发器 (包括大嘴怪的和大运号的)
+    // 寻找大嘴怪触发器
+    MonsterTrigger[] mTriggers = Object.FindObjectsByType<MonsterTrigger>(FindObjectsSortMode.None);
+    foreach (var tr in mTriggers) tr.ResetTrigger();
+
+    // 寻找大运号触发器
+    dayuntrigger[] tTriggers = Object.FindObjectsByType<dayuntrigger>(FindObjectsSortMode.None);
+    foreach (var tr in tTriggers) tr.ResetTrigger();
     }
     void checkIsDarkLoop()
     {
@@ -389,7 +405,7 @@ public class LoopManager : MonoBehaviour
         }
         if (currentLoopIndex == 1)
         {
-            currentEventID = 12;//debug
+            currentEventID = 11;//debug
         }
         if (currentLoopIndex == 3)
         {

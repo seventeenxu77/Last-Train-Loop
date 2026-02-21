@@ -37,12 +37,18 @@ public class MouthMonster : MonoBehaviour
     private int currentPointIndex = 0;
     private Quaternion baseRotation;
 
-    void Start()
-    {
-        // [新增] 自动通过标签寻找玩家
-        player = GameObject.FindGameObjectWithTag("Player");
-        gameObject.SetActive(false);
-    }
+    private Vector3 initialPosition; // 用于记录怪物最初始的坐标
+private Quaternion initialRotation; // 用于记录初始旋转
+
+void Start()
+{
+    player = GameObject.FindGameObjectWithTag("Player");
+    // [记录初始位置和旋转]
+    initialPosition = transform.position;
+    initialRotation = transform.rotation;
+    
+    gameObject.SetActive(false);
+}
 
     void Update()
     {
@@ -194,4 +200,31 @@ public class MouthMonster : MonoBehaviour
         if (dir != Vector3.zero)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 12f * Time.deltaTime);
     }
+    public void ResetMonster()
+{
+    // 1. 停止所有正在跑的协程（非常重要，防止重置后怪物还在自动走）
+    StopAllCoroutines();
+
+    // 2. 重置逻辑开关
+    isActivated = false;
+    currentPointIndex = 0;
+    currentState = MouthState.Idle;
+
+    // 3. 物理位置归位
+    transform.position = initialPosition;
+    transform.rotation = initialRotation;
+
+    // 4. 视觉表现复位（让嘴巴合上，舌头缩回）
+    upperJaw.localRotation = Quaternion.identity;
+    lowerJaw.localRotation = Quaternion.identity;
+    if (tongue != null) 
+    {
+        tongue.localScale = new Vector3(1f, 1f, 0f); // 假设舌头缩回时Z轴缩放为0
+    }
+
+    // 5. 隐藏怪物物体
+    gameObject.SetActive(false);
+
+    Debug.Log("<color=yellow>大嘴怪已彻底重置到初始状态。</color>");
+}
 }

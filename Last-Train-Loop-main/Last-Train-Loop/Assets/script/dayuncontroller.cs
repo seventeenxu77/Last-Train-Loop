@@ -26,7 +26,14 @@ public class dayunontroller : MonoBehaviour
     private float currentSpeed = 0f;
     private Vector3 originalCamPos;  
     private bool isSequenceStarted = false;
+private Vector3 initialPosition;
+private Quaternion initialRotation;
 
+void Awake() // 建议用 Awake 记录初始位置
+{
+    initialPosition = transform.position;
+    initialRotation = transform.rotation;
+}
     void Start()
     {
         if (trainLight != null) {
@@ -142,4 +149,32 @@ public class dayunontroller : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (blackScreen != null) blackScreen.alpha = 0;
     }
+    // --- 新增重置函数 ---
+public void ResetTrain()
+{
+    StopAllCoroutines(); // 停止所有震动和移动协程
+    
+    // 逻辑状态复位
+    isMoving = false;
+    isSequenceStarted = false;
+    currentSpeed = 0f;
+
+    // 物理位置复位
+    transform.position = initialPosition;
+    transform.rotation = initialRotation;
+
+    // 视觉复位
+    if (trainLight != null) {
+        trainLight.intensity = 0;
+        trainLight.range = 0;
+    }
+    if (blackScreen != null) blackScreen.alpha = 0;
+    
+    // 相机复位（防止重置时相机还歪着）
+    if (playerCamera != null && originalCamPos != Vector3.zero) {
+        playerCamera.localPosition = originalCamPos;
+    }
+
+    Debug.Log("<color=orange>大运号列车已复位归点。</color>");
+}
 }
