@@ -60832,13 +60832,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011989545}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.030843573, y: -0.7064338, z: -0.030843573, w: 0.7064338}
   m_LocalPosition: {x: 6.661, y: 2.087, z: 11.856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5, y: -90, z: 0}
 --- !u!1 &1012845016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4099832872177842773, guid: 890fe5b6a3feb974ba9210677e1db6af, type: 3}
@@ -81306,6 +81306,8 @@ GameObject:
   - component: {fileID: 1221133481}
   - component: {fileID: 1221133480}
   - component: {fileID: 1221133479}
+  - component: {fileID: 1221133485}
+  - component: {fileID: 1221133484}
   m_Layer: 0
   m_Name: dayunbox
   m_TagString: Untagged
@@ -81412,6 +81414,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221133484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221133478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentBlackboard: {fileID: 0}
+  _serializedBlackboard: '{"_variables":{}}'
+  _objectReferences: []
+  _serializedVariables: []
+--- !u!114 &1221133485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221133478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_condition":{"specifiedTagOnly":true,"objectTag":"Player","saveGameObjectAs":{"_name":""},"$type":"NodeCanvas.Tasks.Conditions.CheckTrigger_Transform"},"_position":{"x":256.6667,"y":118.0},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"0"},{"_position":{"x":262.3333,"y":210.3333},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_action":{"waitTime":{"_value":4.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":217.6667,"y":293.6667},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"statement":{"_text":"\u8fce\u9762\u9a76\u6765\u7684\u4e00\u8f86\u5927\u8fd0\u5c06\u4f60\u9001\u56de\u73b0\u5b9e"},"overrideAgent":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.Say"},"_position":{"x":362.3333,"y":301.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 1946417685}
+  _boundGraphSource:
+    _version: 3.28
+    _category: 
+    _comments: 
+    _translation: {x: -84, y: -16}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 0
+  _disableAction: 0
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 1221133484}
 --- !u!1 &1222352983
 GameObject:
   m_ObjectHideFlags: 0
@@ -128786,9 +128835,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1994704821}
-  - component: {fileID: 1994704820}
-  - component: {fileID: 1994704819}
-  - component: {fileID: 1994704818}
   m_Layer: 0
   m_Name: Door_A_01.001
   m_TagString: Untagged
@@ -128796,74 +128842,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1994704818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994704817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
-  _objectReferences: []
-  _serializedVariables: []
---- !u!114 &1994704819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994704817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_condition":{"specifiedTagOnly":true,"objectTag":"Player","saveGameObjectAs":{"_name":""},"$type":"NodeCanvas.Tasks.Conditions.CheckTrigger_Transform"},"_position":{"x":255.7773,"y":155.5547},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"0"},{"_action":{"method":{"_baseInfo":"OpenDoor|Invoke|System.Void","_paramsInfo":"System.String|System.Single"},"parameters":[{"_type":"System.String","_value":{"$content":"openDoor","$type":"System.String"}},{"_type":"System.Single","_value":{"$content":0.5,"$type":"System.Single"}}],"returnValue":{},"overrideAgent":{"_type":"OpenDoor","_value":1},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":104.4436,"y":299.3326},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _boundGraphObjectReferences:
-  - {fileID: 0}
-  - {fileID: 296803783}
-  _boundGraphSource:
-    _version: 3.28
-    _category: 
-    _comments: 
-    _translation: {x: 188.57805, y: 67.13513}
-    _zoomFactor: 0.7500945
-  _firstActivation: 0
-  _enableAction: 0
-  _disableAction: 0
-  _lockBoundGraphPrefabOverrides: 1
-  _preInitializeSubGraphs: 0
-  _updateMode: 0
-  _graph: {fileID: 0}
-  _blackboard: {fileID: 1994704818}
---- !u!65 &1994704820
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994704817}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.18, y: 4.09, z: 2.34}
-  m_Center: {x: -0.73, y: -2.07, z: -1.44}
 --- !u!4 &1994704821
 Transform:
   m_ObjectHideFlags: 0
