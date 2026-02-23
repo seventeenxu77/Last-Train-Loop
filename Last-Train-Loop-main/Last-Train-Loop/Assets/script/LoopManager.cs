@@ -59,21 +59,17 @@ public class LoopManager : MonoBehaviour
 
     public bool has_exception = false;
     public bool isDarkLoop = false;
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+void Awake()
+{
+    // 删掉 DontDestroyOnLoad，保留 Instance 供其他脚本访问
+    Instance = this;
+}
 
     void Start()
     {
+        // 从静态类中取回之前的进度
+    currentLoopIndex = GameData.CurrentLoopIndex;
+    ResetTimes = GameData.ResetTimes;
         dynamicContentParent = new GameObject("Dynamic Content");
         AudioTrigger dd = loud.GetComponent<AudioTrigger>();
         gameEndText.gameObject.SetActive(false);
@@ -228,33 +224,39 @@ public class LoopManager : MonoBehaviour
     // 核心功能 1：触发下一个循环 (进入列车)
     public void StartNewLoop()
     {
-        //门判断
-        if (isTransitioning)
-        {
-            Debug.LogWarning("StartNewLoop 被重复调用，已忽略本次调用。");
-            return;
-        }
-        currentLoopIndex++;
-        if (currentLoopIndex == 8)
-        {
-            isTransitioning = true; // 关门
-            TeleportPlayerToSpawnend();
-            StartCoroutine(GameEndSequence());
-            return; // 阻止执行转换函数，因为已经关门
-        }
+if (isTransitioning) return;
+
+    currentLoopIndex++;
+    // 同步到静态类，这样下次重启场景它还在
+    GameData.CurrentLoopIndex = currentLoopIndex; 
+
+    if (currentLoopIndex == 8)
+    {
+        // 通关了，重置静态数据，防止下次点“开始游戏”直接又是第5关
+        GameData.GlobalReset(); 
+        
+        isTransitioning = true;
+        TeleportPlayerToSpawnend();
+        StartCoroutine(GameEndSequence());
+        return;
+    }
         isTransitioning = true;
         StartCoroutine(LoopTransition());
     }
 
-    public void ResetLoop()
-    {
-        currentLoopIndex = 0;
-        StartCoroutine(LoopTransition());
-        Subwayrun tmp = car.GetComponent<Subwayrun>();
-        car.transform.position = tmp.startPosition;
-        tmp.StartMoving();
-        ResetTimes++;
-    }
+public void ResetLoop()
+{
+    // 走错路了，进度归零
+    GameData.GlobalReset();
+    
+    // 记录重置次数
+    // 注意：如果你想让 ResetTimes 跨重启，也要存入 GameData
+    GameData.ResetTimes++; 
+
+    // 直接重新加载当前场景
+    string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+    UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+}
 
     // -----------------------------------------------------
     // 核心功能 3：循环转换流程 (包含文字显示逻辑)
@@ -315,7 +317,7 @@ public class LoopManager : MonoBehaviour
         Debug.Log("游戏结束文本已显示。");
         // 5. 最后的等待与转场
         yield return new WaitForSeconds(5.0f); // 让致谢名单停留一会儿
-
+        TotalReset();
         // 释放鼠标，否则玩家回到主界面没法点按钮
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -327,6 +329,26 @@ public class LoopManager : MonoBehaviour
         // yield return new WaitForSeconds(10.0f); // 保持文本显示一段时间
         // SceneManager.LoadScene("MainMenu");
     }
+public void TotalReset()
+{
+    // 1. 重置所有计数器
+    currentLoopIndex = 0;
+    ResetTimes = 0;
+    currentEventID = 0;
+
+    // 2. 重置所有逻辑状态
+    has_exception = false;
+    isDarkLoop = false;
+    isTransitioning = false;
+
+    // 3. 重置 UI 和特殊引用
+    if (gameEndText != null) gameEndText.gameObject.SetActive(false);
+
+    // 4. 重置黑板数据 (同步到 NodeCanvas)
+    UpdateBlackBoard();
+
+    Debug.Log("<color=cyan>LoopManager: 已执行完全重置，所有数据归零。</color>");
+}
 
     // -----------------------------------------------------
     // 内容生成 (保持不变)
@@ -405,7 +427,7 @@ public class LoopManager : MonoBehaviour
         }
         if (currentLoopIndex == 1)
         {
-            currentEventID = 11;//debug
+            currentEventID = 4;//debug
         }
         if (currentLoopIndex == 3)
         {
@@ -413,7 +435,7 @@ public class LoopManager : MonoBehaviour
         }
         if (currentLoopIndex == 6)
         {
-            currentEventID = 12;
+            currentEventID = 12;//debug
         }
         if (currentLoopIndex == 7)
         {

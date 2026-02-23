@@ -69,6 +69,7 @@
     <Compile Include="Assets\script\SetDarkLoop.cs" />
     <Compile Include="Assets\script\LoopManager.cs" />
     <Compile Include="Assets\script\AudioTrigger.cs" />
+    <Compile Include="Assets\script\GameData.cs" />
     <Compile Include="Assets\script\UItext.cs" />
     <Compile Include="Assets\script\GhostMove.cs" />
     <Compile Include="Assets\Resources\Home\Scripts\ExitGame.cs" />
