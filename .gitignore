@@ -1,7 +1,24 @@
-**/[Ll]ibrary/
-**/[Tt]emp/
-**/[Oo]bj/
-**/[Bb]uild/
-**/[Ll]ogs/
-*.apk
-*.unity3d
+# --- 必须排除的临时文件夹 ---
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+/[Vv]s/
+.vscode/
+.vs/
+
+# --- 必须排除的本地设置 ---
+UserSettings/
+[Aa]ssets/AssetStoreTools*
+
+# --- 必须保留的内容 ---
+# 确保不要有 *.meta 这一行
+# 如果有类似 !*.meta 的行，那是“不忽略 meta”的意思，通常不需要特意写，
+# 只要上面没有写 *.meta，Git 默认就会追踪它们。
+
+# --- 忽略 OS 产生的文件 ---
+.DS_Store
+Thumbs.db
