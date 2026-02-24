@@ -6,9 +6,7 @@ public class PortalCamera : MonoBehaviour
     public Transform playerCamera;   
     public Transform portalEntrance; // 入口门（预制体中的门模型）
     public Transform portalExit;     // 出口参考点（目的地）
-
     private Camera portalCam;
-
     void Start()
     {
         portalCam = GetComponent<Camera>();
